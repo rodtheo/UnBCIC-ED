@@ -1,5 +1,5 @@
 #include <stdlib.h>
-
+#include <stdio.h>
 // BEGIN - HEADER
 
 typedef struct elemento {
@@ -20,15 +20,115 @@ void inserirInicio (int valor, t_lista* lista);
 void inserirFim (int valor, t_lista* lista);
 void inserirPos (int pos, int valor, t_lista* lista);
 
-bool listaVazia (t_lista* lista);
+int listaVazia (t_lista* lista);
+void imprime (t_lista* lista);
+void imprimeElemento (t_elemento* elemento);
+void imprimeInterativa (t_lista* lista);
+
+//////////////////
+// Exercicios 2 //
+//////////////////
+
+int tamanho (t_lista* lista);
+int altura (t_elemento* c, t_lista lista);
+int profundidade (t_elemento* c, t_lista lista);
 // END - HEADER
 
-// BEGIN - Functions
+///////////////////////
+// BEGIN - Functions //
+///////////////////////
 
+
+
+
+//////////////////
+// Exercicios 2 //
+//////////////////
+
+/**
+ * A altura de um elemento c em uma lista encadeada é a distância
+ * entre c e o fim da lista.
+ * @param  c     elemento
+ * @param  lista struct da lista encadeada
+ * @return       altura do elemento c na lista
+ */
+int altura (t_elemento* c, t_lista* lista){
+  int alt=0;
+  while (c != NULL){
+    alt ++;
+    c = c->proximo;
+  }
+  return alt;
+}
+
+/**
+ * A profundidade de um elemento (célula) c em uma lista
+ * encadeada é o número de passos que vai do primeiro elemento
+ * até o elemento c
+ *
+ * @param  c     elemento (célula)
+ * @param  lista lista encadeada
+ * @return       profundidade do elemento c
+ */
+int profundidade (t_elemento* c, t_lista* lista){
+  t_elemento* ptr;
+  int prof = 0;
+
+  ptr = lista -> inicio;
+  while (ptr != c){
+    prof ++;
+    ptr = ptr -> proximo;
+  }
+  return prof;
+}
+
+/**
+ * Calcula o número de elementos na lista.
+ * @param  lista ponteiro para a struct lista.
+ * @return       O tamanho da lista.
+ */
+
+int tamanho (t_lista* lista){
+  t_elemento *ptr;
+  int contador = 0;
+  for (ptr = lista->inicio; ptr != NULL; ptr = ptr->proximo){
+      contador++;
+  }
+  return contador;
+}
+
+
+void imprime (t_lista* lista){
+  t_elemento *ptr;
+  ptr = lista->inicio;
+  while (ptr != NULL){
+    printf("%d -> ", ptr->dado);
+    ptr = ptr -> proximo;
+  }
+  printf("NULL\n");
+}
+
+void imprimeInterativa (t_lista* lista){
+  imprimeElemento (lista->inicio);
+  printf("NULL\n");
+}
+
+void imprimeElemento (t_elemento* le){
+  if (le != NULL){
+    printf ("%d -> ", le->dado);
+    imprimeElemento (le->proximo);
+  }
+}
+
+/**
+ * Insere uma célula no inicio da lista
+ * @param valor conteúdo da célula
+ * @param lista ponteiro da lista
+ */
 void inserirInicio (int valor, t_lista* lista) {
   t_elemento* el = set_elemento(valor);
 
-  if listaVazia(lista) {
+  if (listaVazia(lista)) {
     lista->inicio = el;
     lista->fim    = el;
   }
@@ -40,12 +140,10 @@ void inserirInicio (int valor, t_lista* lista) {
 
 void inserirFim (int valor, t_lista* lista){
   t_elemento* el = set_elemento(valor);
-
-
 }
 
-bool listaVazia (t_lista* lista){
-  return ((lista->inicio == NULL) && (lista->fim == NULL))
+int listaVazia (t_lista* lista){
+  return (lista->inicio == NULL);
 }
 
 t_elemento* set_elemento (int valor){
@@ -71,9 +169,24 @@ t_lista* set_lista (){
 
 // END - Functions
 
-int main(){
-  t_elemento* el;
+int main(void){
+  t_lista* lista;
 
-  el = set_elemento (5);
-  return 0;
+  inserirInicio (5, lista);
+  inserirInicio (4, lista);
+  inserirInicio (3, lista);
+
+  imprime (lista);
+  printf("\n===================\n");
+  imprimeInterativa (lista);
+  printf("\n===================\n");
+  printf ("Tamanho da lista = %d\n", tamanho (lista));
+
+
+  printf ("sizeof (celula) = %d\n", sizeof (t_elemento));
+  // Porque o tamanho da struct eh 16 bytes se int tem 4 bytes
+  // e ponteiro para t_elemento tem 8 bytes?
+
+
+   return EXIT_SUCCESS;
 }
