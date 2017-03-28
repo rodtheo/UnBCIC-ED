@@ -1,4 +1,3 @@
-
 #include <stdlib.h>
 
 // BEGIN - HEADER
@@ -16,9 +15,38 @@ typedef struct lista_posicoes {
 t_elemento* set_elemento (int valor);
 
 t_lista* set_lista ();
+
+void inserirInicio (int valor, t_lista* lista);
+void inserirFim (int valor, t_lista* lista);
+void inserirPos (int pos, int valor, t_lista* lista);
+
+bool listaVazia (t_lista* lista);
 // END - HEADER
 
 // BEGIN - Functions
+
+void inserirInicio (int valor, t_lista* lista) {
+  t_elemento* el = set_elemento(valor);
+
+  if listaVazia(lista) {
+    lista->inicio = el;
+    lista->fim    = el;
+  }
+  else {
+    el->proximo = lista->inicio;
+    lista->inicio = el;
+  }
+}
+
+void inserirFim (int valor, t_lista* lista){
+  t_elemento* el = set_elemento(valor);
+
+
+}
+
+bool listaVazia (t_lista* lista){
+  return ((lista->inicio == NULL) && (lista->fim == NULL))
+}
 
 t_elemento* set_elemento (int valor){
   t_elemento* ptr = (t_elemento*)malloc(sizeof(t_elemento));
@@ -37,6 +65,7 @@ t_lista* set_lista (){
 
   return ptrLista;
 }
+
 
 
 
