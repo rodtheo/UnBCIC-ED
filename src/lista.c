@@ -41,11 +41,17 @@ t_elemento* busca (int valor, t_lista *lista);
 t_elemento* buscaR (int valor, t_elemento *el);
 int isOrdemCrescente (t_lista *lista);
 t_elemento* buscaCrescente (int valor, t_lista *lista);
-
-
 // TO-IMPLEMENT
 void buscaConteudoMinimo (t_lista *lista);
 void listasIguais (t_lista *lista1, t_lista *lista2);
+
+/////////////////
+// EXERCICIO 5 //
+/////////////////
+
+t_elemento* buscaPre (t_elemento *el, t_lista *lista);
+void trocaPos (t_elemento *i, t_elemento *j, t_lista *lista);
+void ordenar(t_lista *lista);
 
 
 // END - HEADER
@@ -157,7 +163,6 @@ void inserirInicio (int valor, t_lista* lista) {
 // Exercícios 3 - lista USP //
 //////////////////////////////
 
-
 /**
  * Buscar uma célula com conteúdo igual a valor
  * @param  valor Inteiro para buscar uma célula com este valor
@@ -191,7 +196,141 @@ int isOrdemCrescente (t_lista *lista) {
   return ordem;
 }
 
+// void buscaConteudoMinimo (t_lista *lista){
+//   t_elemento *ptr;
+//
+//   for(ptr = lista->inicio; ptr != NULL; ptr = ptr->proximo){
+//
+//   }
+// }
+
 // t_elemento* buscaCrescente (int valor, t_lista *lista);
+
+//////////////////////////////
+// Exercícios 5 - lista USP //
+//////////////////////////////
+
+void trocaPos (t_elemento *A, t_elemento *B, t_lista *lista){
+  int profundidadeA, profundidadeB;
+  t_elemento *ptrMenor, *prx, *ptr;
+
+  // Verificamos a profundidade (similar ao index) dos elementos A e B
+  profundidadeA = profundidade (A, lista);
+  profundidadeB = profundidade (B, lista);
+
+  // Se o elemento A vem antes do B
+  // com isso quando os elementos sao iguais nada fazemos
+  if (profundidadeA < profundidadeB){
+    // ponteiro para percorrer a lista
+    ptr = lista -> inicio;
+    // ponteiro armazenando o endereço de A (menor indice)
+    ptrMenor = A;
+    // ponteiro com o end do elemento apontado por B
+    // já que iremos modificar o endereço do B pelo A
+    // devemos armazenar esta informação
+    prx = B->proximo;
+
+    // verificamos se o elemento A é cabeça da lista
+    // se positivo apontamos o inicio para B
+    // e setamos o ponteiro como NULL para ele não iniciar o while a seguir
+    if (ptr == A){
+      lista->inicio = B;
+      ptr = NULL;
+    }
+    // se o elemento A não é cabeça da lista devemos procurar
+    // qual elemento é anterior a ele
+    while (ptr != NULL && ptr->proximo != A) {
+      ptr = ptr->proximo;
+    }
+    // se o A não for cabeça da lista executamos esse condicional
+    // que mudará o ponteiro do pré-elemento de A para o endereço de B
+    if (ptr != NULL){
+      ptr->proximo = B;
+      // printf("ptr proximo not NULL %i\n\n", ptr->dado);
+    }
+    // Caso no qual o elemento B vem logo depois do elemento A
+    // caso não lidassemos com este caso, ficariamos num loop eterno
+    if (A->proximo == B) {
+        B->proximo = A;
+    }
+    else {
+      B->proximo = A->proximo;
+    }
+
+    // Até aqui já resolvemos a troca do B para o endereço de A
+    // agora vamos prosseguir para trocar os endereços futuros que
+    // apontarão para A
+
+    // Como B vem depois de A, podemos percorrer a lista a partir de A
+    // para encontrar o pre-elemento de B
+    ptr = ptrMenor;
+
+    while (ptr != NULL && ptr->proximo != B){
+      ptr = ptr->proximo;
+    }
+    // O pre-elemento de B aponta para A
+    ptr->proximo = A;
+    // printf("ptr B->proximo old: %i\n\n", prx->dado);
+    // O proximo elemento de A aponta para o proximo armazenado no
+    // ponteiro prxB
+    A->proximo = prx;
+
+    // B é o fim da lista, isto é, aponta para NULL
+    if (prx == NULL) {
+      lista->fim = A;
+    }
+  }
+  // Analogamente procedemos com o caso de A estar a frente de B na lista
+  else {
+    ptr = lista -> inicio;
+    ptrMenor = B;
+    prx = A->proximo;
+    if (ptr == B){
+      lista->inicio = A;
+      ptr = NULL;
+    }
+    while (ptr != NULL && ptr->proximo != B) {
+      ptr = ptr->proximo;
+    }
+    if (ptr != NULL){
+      ptr->proximo = A;
+    }
+    if (B->proximo == A) {
+        A->proximo = B;
+    }
+    else {
+      A->proximo = B->proximo;
+    }
+
+    ptr = ptrMenor;
+
+    while (ptr != NULL && ptr->proximo != A){
+      ptr = ptr->proximo;
+    }
+
+    ptr->proximo = B;
+
+    B->proximo = prx;
+
+    if (prx == NULL) {
+      lista->fim = B;
+    }
+  }
+}
+
+t_elemento* buscaPre (t_elemento *el, t_lista *lista){
+  t_elemento* ptr;
+
+  ptr = lista->inicio;
+  // caso o pre-elemento a ser pesquisado seja o primeiro da lista
+  if (ptr == el){
+    return 0;
+  }
+  while ((ptr != NULL) && (ptr->proximo != el)){
+    ptr = ptr->proximo;
+  }
+  return ptr;
+}
 
 void inserirFim (int valor, t_lista* lista){
   t_elemento* el = get_elemento(valor);
@@ -227,6 +366,27 @@ t_lista* get_lista (){
   return ptrLista;
 }
 
+void ordenar(t_lista *lista){
+  t_elemento *ptri, *ptrj, *prx;
+  for ( ptri = lista->inicio; ptri != NULL; ptri=prx){
+    prx = ptri->proximo;
+    t_elemento *ptrMin= ptri;
+    // printf("elemento Comparado: %i\n", ptri->dado);
+    for (ptrj = ptri->proximo; ptrj != NULL; ptrj=ptrj->proximo){
+      // printf("contra: %i\n", ptrj->dado);
+      if (ptrj->dado < ptrMin->dado){
+        ptrMin = ptrj;
+        // printf("troca: %i\n", ptrMin->dado);
+      }
+    }
+    // printf("ptri antes troca: %i\n", ptri->dado);
+    trocaPos (ptrMin, ptri, lista);
+    // printf("ptrMin depois troca: %i\n", ptrMin->dado);
+    // printf("ptri depois troca: %i\n", ptri->dado);
+    imprimeInterativa (lista);
+  }
+}
+
 
 
 
@@ -240,6 +400,8 @@ int main(void){
   inserirInicio (5, lista);
   inserirInicio (4, lista);
   inserirInicio (3, lista);
+  inserirInicio (2, lista);
+  inserirInicio (1, lista);
   imprime (lista);
   printf("\n===================\n");
   printf("Add 6 no fim da lista: \n");
@@ -267,6 +429,37 @@ int main(void){
   ordem = isOrdemCrescente (lista);
   printf("Esta na ordem? %i", ordem);
 
+  printf("\n===================\n");
+  // t_elemento *eli, *elj;
+  //
+  // eli = buscaPre (busca(4, lista), lista);
+  // elj = buscaPre (busca(5, lista), lista);
+  //
+  // printf("%i, %i", eli->dado, elj->dado);
+  printf("Mudar elementos 1 e 6 de posição.\n");
+  t_elemento *eli, *elj;
+  eli = busca(1, lista);
+  elj = busca(6, lista);
+  trocaPos (eli, elj, lista);
+  imprimeInterativa (lista);
+
+  printf("\n===================\n");
+  printf("Mudar elementos 2 e 3 de posição.\n");
+  eli = busca(2, lista);
+  elj = busca(3, lista);
+  trocaPos (eli, elj, lista);
+  imprimeInterativa (lista);
+
+  printf("\n===================\n");
+  printf("Mudar elementos 5 e 4 de posição.\n");
+  eli = busca(5, lista);
+  elj = busca(4, lista);
+  trocaPos (eli, elj, lista);
+  imprimeInterativa (lista);
+
+  printf("\n===================\n");
+  ordenar(lista);
+  imprimeInterativa (lista);
 
    return EXIT_SUCCESS;
 }
