@@ -12,9 +12,9 @@ typedef struct lista_posicoes {
   t_elemento* fim;
 } t_lista;
 
-t_elemento* set_elemento (int valor);
+t_elemento* get_elemento (int valor);
 
-t_lista* set_lista ();
+t_lista* get_lista ();
 
 void inserirInicio (int valor, t_lista* lista);
 void inserirFim (int valor, t_lista* lista);
@@ -126,7 +126,7 @@ void imprimeElemento (t_elemento* le){
  * @param lista ponteiro da lista
  */
 void inserirInicio (int valor, t_lista* lista) {
-  t_elemento* el = set_elemento(valor);
+  t_elemento* el = get_elemento(valor);
 
   if (listaVazia(lista)) {
     lista->inicio = el;
@@ -139,14 +139,14 @@ void inserirInicio (int valor, t_lista* lista) {
 }
 
 void inserirFim (int valor, t_lista* lista){
-  t_elemento* el = set_elemento(valor);
+  t_elemento* el = get_elemento(valor);
 }
 
 int listaVazia (t_lista* lista){
   return (lista->inicio == NULL);
 }
 
-t_elemento* set_elemento (int valor){
+t_elemento* get_elemento (int valor){
   t_elemento* ptr = (t_elemento*)malloc(sizeof(t_elemento));
 
   ptr->dado = valor;
@@ -155,7 +155,7 @@ t_elemento* set_elemento (int valor){
   return ptr;
 } // end set_elemento()
 
-t_lista* set_lista (){
+t_lista* get_lista (){
   t_lista* ptrLista = (t_lista*)malloc(sizeof(t_lista));
 
   ptrLista->inicio = NULL;
