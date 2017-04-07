@@ -40,7 +40,6 @@ int profundidade (t_elemento* c, t_lista lista);
 
 
 
-
 //////////////////
 // Exercicios 2 //
 //////////////////
@@ -137,6 +136,39 @@ void inserirInicio (int valor, t_lista* lista) {
     lista->inicio = el;
   }
 }
+
+//////////////////////////////
+// Exercícios 3 - lista USP //
+//////////////////////////////
+
+
+/**
+ * Buscar uma célula com conteúdo igual a valor
+ * @param  valor Inteiro para buscar uma célula com este valor
+ * @param  lista Ponteiro da lista
+ * @return       Se busca for sucesso retorna a célula com conteúdo igual ao valor e NULL caso contrário
+ */
+t_elemento* busca (int valor, t_lista *lista){
+  t_elemento* ptr;
+  ptr = lista->inicio;
+  while (ptr != NULL && ptr->dado=valor){
+    ptr = ptr->proximo;
+  }
+  return ptr;
+}
+
+// Uma implementação recursiva da função busca
+// Note que o parâmetro desta função é diferente da função busca
+// Este recebe o primeiro elemento da lista enquanto na função busca
+// passamos o ponteiro de lista
+
+t_elemento *buscaR (int valor, t_elemento *el){
+  if (el == NULL) return NULL;
+  if (el->proximo == valor) return el;
+  return buscaR (valor, el->proximo);
+}
+
+// EX 3.3 - Verificar se lista está em ORDEM CRESCENTE
 
 void inserirFim (int valor, t_lista* lista){
   t_elemento* el = get_elemento(valor);
