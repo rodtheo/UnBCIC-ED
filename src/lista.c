@@ -31,7 +31,23 @@ void imprimeInterativa (t_lista* lista);
 
 int tamanho (t_lista* lista);
 int altura (t_elemento* c, t_lista lista);
-int profundidade (t_elemento* c, t_lista lista);
+int profundidade (t_elemento* c, t_lista *lista);
+
+/////////////////
+// EXERCICIO 3 //
+/////////////////
+
+t_elemento* busca (int valor, t_lista *lista);
+t_elemento* buscaR (int valor, t_elemento *el);
+int isOrdemCrescente (t_lista *lista);
+t_elemento* buscaCrescente (int valor, t_lista *lista);
+
+
+// TO-IMPLEMENT
+void buscaConteudoMinimo (t_lista *lista);
+void listasIguais (t_lista *lista1, t_lista *lista2);
+
+
 // END - HEADER
 
 ///////////////////////
@@ -51,7 +67,7 @@ int profundidade (t_elemento* c, t_lista lista);
  * @param  lista struct da lista encadeada
  * @return       altura do elemento c na lista
  */
-int altura (t_elemento* c, t_lista* lista){
+int altura (t_elemento* c, t_lista lista){
   int alt=0;
   while (c != NULL){
     alt ++;
@@ -151,27 +167,42 @@ void inserirInicio (int valor, t_lista* lista) {
 t_elemento* busca (int valor, t_lista *lista){
   t_elemento* ptr;
   ptr = lista->inicio;
-  while (ptr != NULL && ptr->dado=valor){
+  while (ptr != NULL && ptr->dado != valor){
     ptr = ptr->proximo;
   }
   return ptr;
 }
 
-// Uma implementação recursiva da função busca
-// Note que o parâmetro desta função é diferente da função busca
-// Este recebe o primeiro elemento da lista enquanto na função busca
-// passamos o ponteiro de lista
+// EX 3.3 - Verificar se lista esta em ORDEM CRESCENTE
 
-t_elemento *buscaR (int valor, t_elemento *el){
-  if (el == NULL) return NULL;
-  if (el->proximo == valor) return el;
-  return buscaR (valor, el->proximo);
+int isOrdemCrescente (t_lista *lista) {
+  t_elemento *ptr;
+  int ordem=1;
+  ptr = lista->inicio;
+  while ((ptr != NULL) && (ptr->proximo != NULL)){
+    if (ptr->dado > ptr->proximo->dado){
+      ordem=0;
+      return ordem;
+    }
+    else {
+      ptr = ptr->proximo;
+    }
+  }
+  return ordem;
 }
 
-// EX 3.3 - Verificar se lista está em ORDEM CRESCENTE
+// t_elemento* buscaCrescente (int valor, t_lista *lista);
 
 void inserirFim (int valor, t_lista* lista){
   t_elemento* el = get_elemento(valor);
+  t_elemento* lastOne;
+  if(listaVazia(lista)) {
+    lista->inicio = el;
+  }
+  else {
+    lista->fim->proximo = el;
+  }
+  lista->fim = el;
 }
 
 int listaVazia (t_lista* lista){
@@ -204,20 +235,37 @@ t_lista* get_lista (){
 int main(void){
   t_lista* lista;
 
+  lista = get_lista();
+
   inserirInicio (5, lista);
   inserirInicio (4, lista);
   inserirInicio (3, lista);
-
   imprime (lista);
   printf("\n===================\n");
+  printf("Add 6 no fim da lista: \n");
+  inserirFim (6, lista);
   imprimeInterativa (lista);
   printf("\n===================\n");
   printf ("Tamanho da lista = %d\n", tamanho (lista));
 
-
   printf ("sizeof (celula) = %d\n", sizeof (t_elemento));
   // Porque o tamanho da struct eh 16 bytes se int tem 4 bytes
   // e ponteiro para t_elemento tem 8 bytes?
+
+  printf("\n===================\n");
+  t_elemento* queryElement;
+  int query = 10;
+  queryElement = busca (query, lista);
+  if (queryElement != NULL){
+  printf("Conteúdo buscado %i, conteúdo encontrado %i,\n", query, (int) queryElement->dado);}
+  else {
+    printf("Conteúdo buscado %i, conteúdo encontrado NULL.\n", query);
+  }
+
+  printf("\n===================\n");
+  int ordem;
+  ordem = isOrdemCrescente (lista);
+  printf("Esta na ordem? %i", ordem);
 
 
    return EXIT_SUCCESS;
