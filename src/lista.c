@@ -52,7 +52,8 @@ void listasIguais (t_lista *lista1, t_lista *lista2);
 t_elemento* buscaPre (t_elemento *el, t_lista *lista);
 void trocaPos (t_elemento *i, t_elemento *j, t_lista *lista);
 void ordenar(t_lista *lista);
-
+// void copiaLista (t_lista *lista, t_lista *nova_lista);
+t_lista *copiaLista (t_lista *lista);
 
 // END - HEADER
 
@@ -367,26 +368,37 @@ t_lista* get_lista (){
 }
 
 void ordenar(t_lista *lista){
-  t_elemento *ptri, *ptrj, *prx;
-  for ( ptri = lista->inicio; ptri != NULL; ptri=prx){
-    prx = ptri->proximo;
-    t_elemento *ptrMin= ptri;
-    // printf("elemento Comparado: %i\n", ptri->dado);
-    for (ptrj = ptri->proximo; ptrj != NULL; ptrj=ptrj->proximo){
-      // printf("contra: %i\n", ptrj->dado);
+  t_lista *cplista = copiaLista (lista);
+  t_elemento *ptri, *ptrj, *prx, *ptrMin;
+  ptri = cplista->inicio;
+  while ((ptri != NULL) && (!isOrdemCrescente (lista))){
+    // printf("elemento Comparado prx: %i\n", prx->dado);
+    ptrMin= ptri;
+
+    for (ptrj = busca(ptri->proximo->dado, lista); ptrj != NULL; ptrj=ptrj->proximo){
       if (ptrj->dado < ptrMin->dado){
         ptrMin = ptrj;
-        // printf("troca: %i\n", ptrMin->dado);
       }
     }
-    // printf("ptri antes troca: %i\n", ptri->dado);
-    trocaPos (ptrMin, ptri, lista);
-    // printf("ptrMin depois troca: %i\n", ptrMin->dado);
-    // printf("ptri depois troca: %i\n", ptri->dado);
-    imprimeInterativa (lista);
+    if (ptrMin != ptri){
+      trocaPos (busca(ptrMin->dado, lista), busca(ptri->dado, lista), lista);
+    }
+    ptri=ptri->proximo;
   }
 }
 
+t_lista *copiaLista (t_lista *lista){
+  t_lista *nova_lista = get_lista();
+  t_elemento *ptr;
+
+  ptr = lista->inicio;
+  while(ptr != NULL){
+    // printf("ptr: %i\n", ptr->dado);
+    inserirFim (ptr->dado, nova_lista);
+    ptr = ptr->proximo;
+  }
+  return nova_lista;
+}
 
 
 
@@ -406,6 +418,7 @@ int main(void){
   printf("\n===================\n");
   printf("Add 6 no fim da lista: \n");
   inserirFim (6, lista);
+  inserirFim (7, lista);
   imprimeInterativa (lista);
   printf("\n===================\n");
   printf ("Tamanho da lista = %d\n", tamanho (lista));
@@ -458,8 +471,14 @@ int main(void){
   imprimeInterativa (lista);
 
   printf("\n===================\n");
-  ordenar(lista);
+  ordenar (lista);
   imprimeInterativa (lista);
+  printf("\n===================\n");
+  // // t_lista *cplista = get_lista();
+  // t_lista *cplista;
+  //
+  // cplista = copiaLista(lista);
+  // imprimeInterativa(cplista);
 
    return EXIT_SUCCESS;
 }
