@@ -52,7 +52,7 @@ p_nodo *getNodo(float coef, int expo) {
 }
 
 /**
- * Funcao retorna o polinomio 
+ * Funcao retorna o polinomio
  * @return polinomio
  */
 l_polinomio *getPolinomio(){
@@ -67,7 +67,7 @@ l_polinomio *getPolinomio(){
  */
 void liberaMemoria (l_polinomio *pol) {
     p_nodo *ptr;
-    
+
     pol->primeiro;
     while (ptr != NULL) {
         free (ptr);
@@ -153,7 +153,7 @@ float calcula_polinomio (l_polinomio *pol, float x) {
     p_nodo *ptr;
     float res = 0;
     for (ptr=pol->primeiro; ptr != NULL; ptr=ptr->proximo) {
-        res = (ptr->coeficiente)*pow(x, ptr->expoente);
+        res += (ptr->coeficiente)*pow(x, ptr->expoente);
     }
     return res;
 }
