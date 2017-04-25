@@ -1,0 +1,87 @@
+= Relatório
+Rodrigo Theodoro Rocha <doc@example.com>
+:doctype: book
+:reproducible:
+//:source-highlighter: coderay
+:source-highlighter: rouge
+// Enable the captions for listing blocks.
+:listing-caption: Listing
+// Uncomment next line to set page size (default is A4)
+//:pdf-page-size: Letter
+:math:
+:imagesoutdir: generated_images
+:imagesdir: images
+:stem: latexmath
+
+== Descrição Notação Polonesa
+
+A notação polonesa reversa, refere-se a forma de escrever expressões algébricas
+na qual a posição relativa dos operadores é após dois operandos (posfixa).
+Por exemplo, a expressão A+B*C, escrita na forma usual (infixa) pode ser
+reescrita na forma posfixa respeitando-se a precedência dos operadores.
+Neste caso, a multiplicação precede a operação de adição, na ausência de
+parênteses que indiquem o contrário. Portanto a expressão A+B*C pode ser
+interpretada como A+(B*C) e convertida para a forma posfixa
+através das 4 etapas a seguir:
+
+["lowerroman"]
+. A + (B * C) parêntese para obter ênfase;
+. A + (BC*) conversão da multiplicação;
+. A(BC*)+ conversão da adição;
+. ABC*+ forma posfixa
+
+Para a conversão somente é necessário lembrar a ordem de precedência dos operadores e as
+restrições impostas pelos parênteses na expressão. A ordem de precedência é descrita a seguir:
+
+1. Exponenciação
+2. Multiplicação/Divisão
+3. Adição/Subtração
+
+Abaixo listou-se alguns exemplos de expressões aritméticas convertidas da forma
+infixa (coluna esquerda) para a posfixa (coluna direita):
+
+:icons: font
+----
+A+B-C       AB+C-
+(A+B)*(C-D) AB+CD-*
+(A+B)*C     AB+C*   <1>
+A+(B*C)     ABC*+   <2>
+----
+
+<1> Apesar da forma infixa requerer o uso de parênteses para alterar a ordem de precedência
+ da adição sobre a multiplicação, na forma posfixa o parêntese não é necessário pois a ordem
+dos operandos determina as etapas de resolução da expressão.
+
+<2> Como a escrita envolvendo a forma posfixa muitas vezes não é trivial, sua avaliação envolve
+uma forma alternativa de realizar as operações. Imagine que os valores dos operandos nesta expressão
+seja A=3, B=2 e C=4. A avaliação do resultado da expressão <2> na forma infixa é trivial e na forma
+posfixa não, portanto, o algoritmo para sua resolução será explicado na próxima seção.
+
+=== Algoritmo para avaliação das expressões na forma posfixa
+
+Cada vez que um operador é encontrado numa expressão posfixa ele refere-se aos 2 operandos imediatamente
+anteriores. Por exemplo, em <2> percorre-se a expressão até encontrar o primeiro operador (multiplicação)
+e efetua-se a multiplicação dos operandos B e C. O resultado é, então armazenado e prosseguimos até encontrar o próximo operador
+(adição). Adiciona-se A ao resultado da multiplicação de B e C. Este é o resultado final da avaliação da expressão em
+questão.
+
+A implementação desse procedimento envolve a utilização de pilhas, no qual, empilham-se os operandos até deparar-se
+com um operador e, então, efetua-se a aplicação deste operador contra os 2 últimos operandos empilhados.
+
+[source, C]
+----
+stk = a pilha vazia;
+while (nao terminar de percorrer a expressão posfixa){
+  c = próximo caractere da entrada;
+  if (c é um operando){
+    push (stk, c);
+  }
+  else {
+    /* c é um operador */
+    opnd2 = pop (stk);
+    opnd1 = pop (stk);
+    value = resultado da aplicação do operador aos 2 operandos anteriores;
+    push (stk, value);
+  } /* fim else */
+} /* fim while */
+----
