@@ -4,9 +4,9 @@
 
 #define MAXDECIMAL 10
 
-void check_infixa (t_pilha *pilha, char ** linha){
+void checkValidity (t_pilha *pilha, char ** linha){
   char ch;
-  char chout;
+  t_elementPilha chout;
   int i;
   for (i = 0; i < NLINES-1; i ++) {
     int valido=1;
@@ -31,7 +31,7 @@ void check_infixa (t_pilha *pilha, char ** linha){
 
       if (ch == '('){
         // printf("PUSH: %c\n", ch);
-        push (pilha, ch);
+        push_char (pilha, &ch);
       }
 
       if (ch == ')'){
@@ -60,13 +60,12 @@ float avalia_posfixa (char *expr){
   char c;
   char string_number[MAXDECIMAL];
   // Varremos enquanto nao chegamos ao fim da expressao posfixa
-  for (posicao = 0; (c= *(expr+posicao)) != '\0'){
+  for (posicao = 0; (c= *(expr+posicao)) != '\0';){
 
     while (is_digit(c) || is_point(c)){
+      continue;
 
     }
-
-
   }
-
+  return 1.0;
 }

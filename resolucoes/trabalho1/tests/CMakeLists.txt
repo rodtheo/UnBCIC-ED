@@ -6,10 +6,14 @@ include_directories(${CMAKE_SOURCE_DIR}/src)
 # be: C:/Program Files/check
 # set(CHECK_INSTALL_DIR "C:/Program Files/check")
 
+find_package(Check REQUIRED)
 set(CHECK_INSTALL_DIR "/usr/local/Cellar/check/0.11.0")
 
 #find_package(Check REQUIRED)
 include_directories(${CHECK_INCLUDE_DIRS})
 
-file(GLOB SOURCES "*.c")
-add_executable(check_pilha ${SOURCES})
+
+set (TEST_SOURCES check_pilha.c)
+
+add_executable(check_pilha ${TEST_SOURCES})
+target_link_libraries (check_pilha pilha ${CHECK_LIBRARIES})

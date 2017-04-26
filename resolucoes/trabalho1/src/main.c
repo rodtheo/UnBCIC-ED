@@ -29,7 +29,7 @@ int main(){
      }
   } while (c != EOF);
 
-  checkValidity (pilha, linha);
+  //checkValidity (pilha, linha);
 
   // for (i = 0; i < NLINES-1; i ++)
   //    fputs (linha[i], stdout);

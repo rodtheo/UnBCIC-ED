@@ -32,7 +32,7 @@ int pop (struct stack *ps, struct stackelement *el){
   }
 }
 
-int push (struct stack *ps, int x){
+int push_int (struct stack *ps, int x){
   if (ps->top < STACKSIZE-1){
     (ps->top)++;
     ps->items[ps->top].etype = INTGR;

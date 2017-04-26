@@ -1,2 +1,0 @@
-/Users/rodtheo/Bioinfo/UnB-Mec/UnBCIC-ED/resolucoes/trabalho1/build/tests/CMakeFiles/check_pilha.dir
-/Users/rodtheo/Bioinfo/UnB-Mec/UnBCIC-ED/resolucoes/trabalho1/build/src/CMakeFiles/trabalho1.dir
