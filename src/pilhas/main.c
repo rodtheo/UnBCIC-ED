@@ -33,5 +33,7 @@ int main(){
   pop (sptr, septr);
   print_elem (septr);
 
+  // print_stack (sptr);
+
   return 0;
 }

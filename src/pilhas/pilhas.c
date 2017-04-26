@@ -69,7 +69,7 @@ int print_stack (struct stack *ps){
     printf("-----------------------------\n");
     for (i=(ps->top); i>=0; i--){
       printf("v[%d] %x ", i, &(ps->items[i].element));
-      print_elem (&ps->items[i].element);
+      print_elem (&(ps->items[i]));
       if (i==0) printf("<--- base (inicio)");
       if (i==ps->top) printf("<--- topo (fim)");
       printf ("\n");
