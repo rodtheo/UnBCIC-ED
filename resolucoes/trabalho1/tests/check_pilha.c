@@ -6,7 +6,7 @@ START_TEST(test_behaviour_stack)
 {
   t_pilha *pilha = get_pilha();
   char elCharPushed='a';
-  char elStringPushed[3] = "abc";
+  char elStringPushed[10] = "abc";
   int elIntPushed=100;
   float elFloatPushed=1.54;
   t_elementPilha elPoped;
@@ -20,7 +20,7 @@ START_TEST(test_behaviour_stack)
 
   push_float (pilha, elFloatPushed);
 
-  ck_assert_int_eq(top(pilha), 102932);
+  ck_assert_int_eq(top(pilha), 2);
   // Retiramos o elemento da pilha
   pop (pilha, &elPoped);
   ck_assert_int_eq(top(pilha), 1);
@@ -34,6 +34,12 @@ START_TEST(test_behaviour_stack)
   pop (pilha, &elPoped);
   ck_assert_int_eq(empty(pilha), 1);
   ck_assert_str_eq(elPoped.element.cval, "a");
+
+  // Insert string and pop it out of stack
+  push_char (pilha, elStringPushed);
+  pop (pilha, &elPoped);
+  ck_assert_msg (strcmp (elPoped.element.cval, "abc") == 0,
+                  "Found %s", elPoped.element.cval);
 
   // We free the stack's allocated memory
   free_pilha(pilha);

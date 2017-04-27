@@ -89,3 +89,4 @@ add_subdirectory(tests)
 #Unit tests
 enable_testing()
 add_test(NAME check_pilha COMMAND check_pilha)
+add_test(NAME check_posfixa COMMAND check_posfixa)

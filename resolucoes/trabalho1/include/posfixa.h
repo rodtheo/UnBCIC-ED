@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "pilha.h"
 
 /**
  * Função que avalia se uma expressão passada no parâmetro @p linha é uma
@@ -14,8 +15,12 @@
  * @param linha Ponteiro para ponteiro da forma char referenciando uma expressão
  *  da forma infixa (usual).
  */
-void check_infixa (t_pilha *pilha, char ** linha);
+int check_infixa (char *expr);
 
 int is_digit (char c);
 
-float avalia_posfixa (char **expr);
+t_pilha* avalia_posfixa (char *expr);
+
+void infixa_to_posfixa (char *expr, char *exprSaida);
+
+#endif // __POSFIXA_H__
