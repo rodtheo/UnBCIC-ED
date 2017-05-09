@@ -1,0 +1,171 @@
+\hypertarget{posfixa_8h}{}\section{Referência ao ficheiro /\+Users/rafaeltheodoro/\+Documents/\+Rodrigo/\+Un\+B\+C\+I\+C-\/\+E\+D/resolucoes/trabalho1/include/posfixa.h}
+\label{posfixa_8h}\index{/\+Users/rafaeltheodoro/\+Documents/\+Rodrigo/\+Un\+B\+C\+I\+C-\/\+E\+D/resolucoes/trabalho1/include/posfixa.\+h@{/\+Users/rafaeltheodoro/\+Documents/\+Rodrigo/\+Un\+B\+C\+I\+C-\/\+E\+D/resolucoes/trabalho1/include/posfixa.\+h}}
+
+
+Arquivo contendo as assinaturas das funções implementadas para executar as operações de validação das expressões infixa (usual), conversão das expressões infixas para posfixas, avaliação do resultado das expressões posfixa. O arquivo também contem implmentações das funções auxiliares como por exemplo substituir chaves e colchetes por parênteses ( \hyperlink{posfixa_8h_ac2f008d50cbb07ae5bf7acd1853f9f20}{replace()} ).  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pilha.\+h\char`\"{}}\newline
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{posfixa_8h_a5850fac357e2c72c45fc11f24fc32465}{check\+\_\+infixa} (char $\ast$expr)
+\item 
+int \hyperlink{posfixa_8h_afcb8cf4ba18ad43ea5c643b027cf0170}{is\+\_\+digit} (char c)
+\item 
+\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$ \hyperlink{posfixa_8h_a136a74c2b97f0436f5b86153f80af183}{avalia\+\_\+posfixa} (char $\ast$expr)
+\item 
+int \hyperlink{posfixa_8h_a337bc5943083a1978b779557b7d59664}{prcd} (char opr1, char opr2)
+\item 
+void \hyperlink{posfixa_8h_aa169b8c88a61692ce5d7380883366824}{infixa\+\_\+to\+\_\+posfixa} (char expr\mbox{[}$\,$\mbox{]}, char expr\+Saida\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{posfixa_8h_ad6327615d50c4c5f7776895d5d79f52a}{is\+\_\+operador} (char c)
+\item 
+int \hyperlink{posfixa_8h_a4312b004f59ef2e45e54a27950223a01}{is\+\_\+point} (char c)
+\item 
+void \hyperlink{posfixa_8h_ab11d2ae06f35c2fd4a427ca3f20cf4b5}{Remove\+New\+Lines} (char $\ast$source)
+\item 
+char $\ast$ \hyperlink{posfixa_8h_ac2f008d50cbb07ae5bf7acd1853f9f20}{replace} (const char $\ast$s)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Arquivo contendo as assinaturas das funções implementadas para executar as operações de validação das expressões infixa (usual), conversão das expressões infixas para posfixas, avaliação do resultado das expressões posfixa. O arquivo também contem implmentações das funções auxiliares como por exemplo substituir chaves e colchetes por parênteses ( \hyperlink{posfixa_8h_ac2f008d50cbb07ae5bf7acd1853f9f20}{replace()} ). 
+
+\begin{DoxyAuthor}{Autor}
+Rodrigo Theodoro Rocha 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+25 April 2016 
+\end{DoxyDate}
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{posfixa_8h_a136a74c2b97f0436f5b86153f80af183}\label{posfixa_8h_a136a74c2b97f0436f5b86153f80af183}} 
+\index{posfixa.\+h@{posfixa.\+h}!avalia\+\_\+posfixa@{avalia\+\_\+posfixa}}
+\index{avalia\+\_\+posfixa@{avalia\+\_\+posfixa}!posfixa.\+h@{posfixa.\+h}}
+\subsubsection{\texorpdfstring{avalia\+\_\+posfixa()}{avalia\_posfixa()}}
+{\footnotesize\ttfamily \hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha}$\ast$ avalia\+\_\+posfixa (\begin{DoxyParamCaption}\item[{char $\ast$}]{expr }\end{DoxyParamCaption})}
+
+Dada uma expressão na forma infixa calcula o resultado da mesma. 
+\begin{DoxyParams}{Parâmetros}
+{\em expr} & Entrada na forma infixa respeitando-\/se as notações no manual. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Endereço de uma pilha onde o único elemento, no topo, é um float. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{posfixa_8h_a5850fac357e2c72c45fc11f24fc32465}\label{posfixa_8h_a5850fac357e2c72c45fc11f24fc32465}} 
+\index{posfixa.\+h@{posfixa.\+h}!check\+\_\+infixa@{check\+\_\+infixa}}
+\index{check\+\_\+infixa@{check\+\_\+infixa}!posfixa.\+h@{posfixa.\+h}}
+\subsubsection{\texorpdfstring{check\+\_\+infixa()}{check\_infixa()}}
+{\footnotesize\ttfamily int check\+\_\+infixa (\begin{DoxyParamCaption}\item[{char $\ast$}]{expr }\end{DoxyParamCaption})}
+
+Função que avalia se uma expressão passada no parâmetro {\ttfamily linha} é uma expressão infixa (usual) válida. Avalia se os parênteses são restrições válidas.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em pilha} & Endereço da estrutura da pilha {\itshape vazia} para auxiliar na determinação da validade da expressão. \\
+\hline
+{\em linha} & Ponteiro para ponteiro da forma char referenciando uma expressão da forma infixa (usual). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{posfixa_8h_aa169b8c88a61692ce5d7380883366824}\label{posfixa_8h_aa169b8c88a61692ce5d7380883366824}} 
+\index{posfixa.\+h@{posfixa.\+h}!infixa\+\_\+to\+\_\+posfixa@{infixa\+\_\+to\+\_\+posfixa}}
+\index{infixa\+\_\+to\+\_\+posfixa@{infixa\+\_\+to\+\_\+posfixa}!posfixa.\+h@{posfixa.\+h}}
+\subsubsection{\texorpdfstring{infixa\+\_\+to\+\_\+posfixa()}{infixa\_to\_posfixa()}}
+{\footnotesize\ttfamily void infixa\+\_\+to\+\_\+posfixa (\begin{DoxyParamCaption}\item[{char}]{expr\mbox{[}$\,$\mbox{]},  }\item[{char}]{expr\+Saida\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Converte uma expressão na forma posfixa para a infixa. 
+\begin{DoxyParams}{Parâmetros}
+{\em expr} & Entrada da expressão infixa. \\
+\hline
+{\em expr\+Saida} & Endereço da expressão final. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{posfixa_8h_afcb8cf4ba18ad43ea5c643b027cf0170}\label{posfixa_8h_afcb8cf4ba18ad43ea5c643b027cf0170}} 
+\index{posfixa.\+h@{posfixa.\+h}!is\+\_\+digit@{is\+\_\+digit}}
+\index{is\+\_\+digit@{is\+\_\+digit}!posfixa.\+h@{posfixa.\+h}}
+\subsubsection{\texorpdfstring{is\+\_\+digit()}{is\_digit()}}
+{\footnotesize\ttfamily int is\+\_\+digit (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+Função auxiliar para testar se o caractere {\ttfamily c} é um digito (entre 0-\/9). 
+\begin{DoxyParams}{Parâmetros}
+{\em c} & Caractere de entrada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+1, se {\ttfamily c} é um digito. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{posfixa_8h_ad6327615d50c4c5f7776895d5d79f52a}\label{posfixa_8h_ad6327615d50c4c5f7776895d5d79f52a}} 
+\index{posfixa.\+h@{posfixa.\+h}!is\+\_\+operador@{is\+\_\+operador}}
+\index{is\+\_\+operador@{is\+\_\+operador}!posfixa.\+h@{posfixa.\+h}}
+\subsubsection{\texorpdfstring{is\+\_\+operador()}{is\_operador()}}
+{\footnotesize\ttfamily int is\+\_\+operador (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+Avalia se o caractere é um operador. 
+\begin{DoxyParams}{Parâmetros}
+{\em c} & Caractere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+1, se {\ttfamily c} é operador. 0, caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{posfixa_8h_a4312b004f59ef2e45e54a27950223a01}\label{posfixa_8h_a4312b004f59ef2e45e54a27950223a01}} 
+\index{posfixa.\+h@{posfixa.\+h}!is\+\_\+point@{is\+\_\+point}}
+\index{is\+\_\+point@{is\+\_\+point}!posfixa.\+h@{posfixa.\+h}}
+\subsubsection{\texorpdfstring{is\+\_\+point()}{is\_point()}}
+{\footnotesize\ttfamily int is\+\_\+point (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+Avalia se o caractere é um ponto. Para permitir números fracionados. 
+\begin{DoxyParams}{Parâmetros}
+{\em c} & Caractere. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+1, se {\ttfamily c} é um ponto. 0, cc. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{posfixa_8h_a337bc5943083a1978b779557b7d59664}\label{posfixa_8h_a337bc5943083a1978b779557b7d59664}} 
+\index{posfixa.\+h@{posfixa.\+h}!prcd@{prcd}}
+\index{prcd@{prcd}!posfixa.\+h@{posfixa.\+h}}
+\subsubsection{\texorpdfstring{prcd()}{prcd()}}
+{\footnotesize\ttfamily int prcd (\begin{DoxyParamCaption}\item[{char}]{opr1,  }\item[{char}]{opr2 }\end{DoxyParamCaption})}
+
+Estabelece a procedência dos operadores e parênteses para converter corretamente a expressão para a forma posfixa. 
+\begin{DoxyParams}{Parâmetros}
+{\em opr1} & Operador \\
+\hline
+{\em opr2} & Operador \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+1, se o {\ttfamily opr1} tem maior ou igual procedência ao operador {\ttfamily opr2}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{posfixa_8h_ab11d2ae06f35c2fd4a427ca3f20cf4b5}\label{posfixa_8h_ab11d2ae06f35c2fd4a427ca3f20cf4b5}} 
+\index{posfixa.\+h@{posfixa.\+h}!Remove\+New\+Lines@{Remove\+New\+Lines}}
+\index{Remove\+New\+Lines@{Remove\+New\+Lines}!posfixa.\+h@{posfixa.\+h}}
+\subsubsection{\texorpdfstring{Remove\+New\+Lines()}{RemoveNewLines()}}
+{\footnotesize\ttfamily void Remove\+New\+Lines (\begin{DoxyParamCaption}\item[{char $\ast$}]{source }\end{DoxyParamCaption})}
+
+Remove caractere de nova linha ~\newline
+ de uma string. 
+\begin{DoxyParams}{Parâmetros}
+{\em source} & Endereço da string. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{posfixa_8h_ac2f008d50cbb07ae5bf7acd1853f9f20}\label{posfixa_8h_ac2f008d50cbb07ae5bf7acd1853f9f20}} 
+\index{posfixa.\+h@{posfixa.\+h}!replace@{replace}}
+\index{replace@{replace}!posfixa.\+h@{posfixa.\+h}}
+\subsubsection{\texorpdfstring{replace()}{replace()}}
+{\footnotesize\ttfamily char$\ast$ replace (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+Substitui chaves (\{,\}), colchetes (\mbox{[},\mbox{]}) pelo parêntese correspondente. 
+\begin{DoxyParams}{Parâmetros}
+{\em s} & String. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Endereço da string com as substituições. 
+\end{DoxyReturn}

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho 1: Código-Fonte de /Users/rafaeltheodoro/Documents/Rodrigo/UnBCIC-ED/resolucoes/trabalho1/include/posfixa.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Trabalho 1
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">posfixa.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="posfixa_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef __POSFIXA_H__</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define __POSFIXA_H__</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pilha_8h.html">pilha.h</a>&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">int</span> <a class="code" href="posfixa_8h.html#a5850fac357e2c72c45fc11f24fc32465">check_infixa</a> (<span class="keywordtype">char</span> *expr);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">int</span> <a class="code" href="posfixa_8h.html#afcb8cf4ba18ad43ea5c643b027cf0170">is_digit</a> (<span class="keywordtype">char</span> c);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<a class="code" href="structpilha.html">t_pilha</a>* <a class="code" href="posfixa_8h.html#a136a74c2b97f0436f5b86153f80af183">avalia_posfixa</a> (<span class="keywordtype">char</span> *expr);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">int</span> <a class="code" href="posfixa_8h.html#a337bc5943083a1978b779557b7d59664">prcd</a> (<span class="keywordtype">char</span> opr1, <span class="keywordtype">char</span> opr2);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> <a class="code" href="posfixa_8h.html#aa169b8c88a61692ce5d7380883366824">infixa_to_posfixa</a> (<span class="keywordtype">char</span> expr[], <span class="keywordtype">char</span> exprSaida[]);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">int</span> <a class="code" href="posfixa_8h.html#ad6327615d50c4c5f7776895d5d79f52a">is_operador</a> ( <span class="keywordtype">char</span> c );</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">int</span> <a class="code" href="posfixa_8h.html#a4312b004f59ef2e45e54a27950223a01">is_point</a> (<span class="keywordtype">char</span> c);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> <a class="code" href="posfixa_8h.html#ab11d2ae06f35c2fd4a427ca3f20cf4b5">RemoveNewLines</a>(<span class="keywordtype">char</span>* source);</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="posfixa_8h.html#ac2f008d50cbb07ae5bf7acd1853f9f20">replace</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *s);</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif // __POSFIXA_H__</span></div><div class="ttc" id="posfixa_8h_html_ad6327615d50c4c5f7776895d5d79f52a"><div class="ttname"><a href="posfixa_8h.html#ad6327615d50c4c5f7776895d5d79f52a">is_operador</a></div><div class="ttdeci">int is_operador(char c)</div><div class="ttdef"><b>Definition:</b> posfixa.c:264</div></div>
+<div class="ttc" id="posfixa_8h_html_a4312b004f59ef2e45e54a27950223a01"><div class="ttname"><a href="posfixa_8h.html#a4312b004f59ef2e45e54a27950223a01">is_point</a></div><div class="ttdeci">int is_point(char c)</div><div class="ttdef"><b>Definition:</b> posfixa.c:157</div></div>
+<div class="ttc" id="posfixa_8h_html_a5850fac357e2c72c45fc11f24fc32465"><div class="ttname"><a href="posfixa_8h.html#a5850fac357e2c72c45fc11f24fc32465">check_infixa</a></div><div class="ttdeci">int check_infixa(char *expr)</div><div class="ttdef"><b>Definition:</b> posfixa.c:106</div></div>
+<div class="ttc" id="posfixa_8h_html_ac2f008d50cbb07ae5bf7acd1853f9f20"><div class="ttname"><a href="posfixa_8h.html#ac2f008d50cbb07ae5bf7acd1853f9f20">replace</a></div><div class="ttdeci">char * replace(const char *s)</div><div class="ttdef"><b>Definition:</b> posfixa.c:54</div></div>
+<div class="ttc" id="structpilha_html"><div class="ttname"><a href="structpilha.html">pilha</a></div><div class="ttdoc">Composição da struct pilha Genérica. </div><div class="ttdef"><b>Definition:</b> pilha.h:41</div></div>
+<div class="ttc" id="pilha_8h_html"><div class="ttname"><a href="pilha_8h.html">pilha.h</a></div><div class="ttdoc">Arquivo contendo as definições, struct e funções para criar uma estrutura do tipo pilha bem como real...</div></div>
+<div class="ttc" id="posfixa_8h_html_ab11d2ae06f35c2fd4a427ca3f20cf4b5"><div class="ttname"><a href="posfixa_8h.html#ab11d2ae06f35c2fd4a427ca3f20cf4b5">RemoveNewLines</a></div><div class="ttdeci">void RemoveNewLines(char *source)</div><div class="ttdef"><b>Definition:</b> posfixa.c:93</div></div>
+<div class="ttc" id="posfixa_8h_html_afcb8cf4ba18ad43ea5c643b027cf0170"><div class="ttname"><a href="posfixa_8h.html#afcb8cf4ba18ad43ea5c643b027cf0170">is_digit</a></div><div class="ttdeci">int is_digit(char c)</div><div class="ttdef"><b>Definition:</b> posfixa.c:153</div></div>
+<div class="ttc" id="posfixa_8h_html_a337bc5943083a1978b779557b7d59664"><div class="ttname"><a href="posfixa_8h.html#a337bc5943083a1978b779557b7d59664">prcd</a></div><div class="ttdeci">int prcd(char opr1, char opr2)</div><div class="ttdef"><b>Definition:</b> posfixa.c:238</div></div>
+<div class="ttc" id="posfixa_8h_html_aa169b8c88a61692ce5d7380883366824"><div class="ttname"><a href="posfixa_8h.html#aa169b8c88a61692ce5d7380883366824">infixa_to_posfixa</a></div><div class="ttdeci">void infixa_to_posfixa(char expr[], char exprSaida[])</div><div class="ttdef"><b>Definition:</b> posfixa.c:268</div></div>
+<div class="ttc" id="posfixa_8h_html_a136a74c2b97f0436f5b86153f80af183"><div class="ttname"><a href="posfixa_8h.html#a136a74c2b97f0436f5b86153f80af183">avalia_posfixa</a></div><div class="ttdeci">t_pilha * avalia_posfixa(char *expr)</div><div class="ttdef"><b>Definition:</b> posfixa.c:161</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

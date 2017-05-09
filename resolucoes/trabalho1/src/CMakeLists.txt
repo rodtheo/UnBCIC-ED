@@ -7,14 +7,16 @@ set(LIB_SOURCES
 
 set(HEADERS
     ${CMAKE_SOURCE_DIR}/include/pilha.h
-    #${CMAKE_SOURCE_DIR}/include/posfixa.h
+    ${CMAKE_SOURCE_DIR}/include/posfixa.h
+    ${CMAKE_SOURCE_DIR}/include/calculadora.h
 )
 
 #Can manually add the sources using the set command as follows
-set(SOURCES posfixa.c pilha.c main.c)
+set(SOURCES calculadora.c posfixa.c pilha.c main.c)
 
 add_library(pilha STATIC ${LIB_SOURCES} ${HEADERS})
 add_library(posfixa STATIC ${LIB_SOURCES} ${HEADERS})
+add_library(calculadora STATIC ${LIB_SOURCES} ${HEADERS})
 
 #The file(GLOB...) allows for wildcard additions
 #file(GLOB SOURCES "*.c")

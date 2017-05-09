@@ -1,5 +1,6 @@
-= Relatório
-Rodrigo Theodoro Rocha <doc@example.com>
+= Relatório Notação Polonesa
+Rodrigo Theodoro Rocha <theodoro.biotec@gmail.com>
+15/0157967
 :doctype: book
 :reproducible:
 //:source-highlighter: coderay
@@ -9,11 +10,11 @@ Rodrigo Theodoro Rocha <doc@example.com>
 // Uncomment next line to set page size (default is A4)
 //:pdf-page-size: Letter
 :math:
-:imagesoutdir: generated_images
+:imagesoutdir: images
 :imagesdir: images
 :stem: latexmath
 
-== Descrição Notação Polonesa
+== Introdução
 
 A notação polonesa reversa, refere-se a forma de escrever expressões algébricas
 na qual a posição relativa dos operadores é após dois operandos (posfixa).
@@ -85,3 +86,107 @@ while (nao terminar de percorrer a expressão posfixa){
   } /* fim else */
 } /* fim while */
 ----
+
+Note que para avaliação de uma expressão posfixa os termos dela podem ser qualquer número inteiro, fracionado, negativo ou positivo. Portanto, na implementação considerou-se os operandos da expressão como qualquer número pertencente ao conjunto dos Reais.
+
+Como a implementação considera qualquer número real, adotou-se duas notações especiais quanto a forma de escrita da expressão de entrada a ser avaliada. Primeiro, separam-se os termos da expressão via espaços. Segundo, o sinal negativo dos termos negativos não podem estar separados da parte numérica do termo. Por exemplo, a expressão posfixa `2+(-3*4)` deve ser editada para a forma `2 + ( -3 * 4 )`, isto é, respeitando-se a notação explicada acima para uma correta transformação e avaliação da expressão infixa.
+
+=== Implementação da conversão da forma posfixa para infixa
+
+A função `infixa_to_posfixa ()` usa como entrada uma expressão posfixa válida respeitando a notação e depois retorna sua forma infixa. Um ponto importante na implementação dessa função é lidar com os caracteres especiais (, { e [  que servem como separadores e mudam a importância dos operadores.
+
+<<<
+
+== Arquitetura
+
+O diagrama abaixo representa os dois modos de opção do arquivo binário `bin/trabalho1`.
+
+["mermaid", "mermaidtest", "png"]
+....
+graph TB
+      subgraph Calculadora
+      a1[Empilha um número real]-->a2[Pergunta qual <br> operação executar: soma, subtração, <br> multiplicação, divisão ou repetição]
+      a2-->a3[Imprime a pilha e pergunta se a <br> calculadora deve continuar <br> a execução ou finalizar]
+      end
+      subgraph Resolução
+      b1[Entrada da expr posfixa]-->b2[Validação da posfixa]
+      b2-->b3[Conversão para infixa]
+      b3-->b4[Avaliação da expressão infixa]
+      end
+....
+
+== Instalação e execução dos Testes
+
+Execute as seguintes etapas para instalar o binário e executar os testes:
+
+1. Dentro do diretório principal execute `mkdir build`;
+2. Entre no subdiretório com `cd build`;
+3. Execute `cmake ..`;
+4. Execute o comando `make` para compilar as bibliotecas na pasta `bin/include` e o binário `trabalho1` no diretório `bin`;
+5. Para executar os testes: `make test` no diretório `build`.
+
+<<<
+
+== Smoke Tests
+
+[cols="d,d,a,d,a,a", orientation=landscape]
+|===
+| Tópico | Etapa | Arquivo | Ação | Expectativa | Taxa de Sucesso
+
+| Pilha Genérica
+| Estrutura de dado primária
+| `src/pilha.c`
+| Implementar funções básicas (push, pop, isEmpty...)
+| Implementar uma estrutura genérica de pilhas na qual os elementos podem ser do tipo `char`, `int` ou `float`.
+| Unit tests passaram com 100% de sucesso (`tests/check_pilha.c`)
+
+| Validação da Expressão
+| Resolução de Expressão
+| Função `check_infixa()` (`src/posfixa.c`)
+| Checar se a entrada na forma infixa é válida
+| Dada uma expressão infixa (usual) tanto na forma numérica quanto com variáveis alfabéticas, avalia a correta colocação dos parênteses
+| Unit tests passaram com 100% de sucesso (`tests/check_posfixa.c` linhas 9-20)
+
+| Validação da Expressão
+| Resolução de Expressão
+| Função `check_infixa()` (`src/posfixa.c`)
+| Checar se a entrada na forma infixa é válida
+| Dada uma expressão infixa (usual) tanto na forma numérica quanto com variáveis alfabéticas, avalia a correta colocação dos parênteses
+| Unit tests passaram com 100% de sucesso (`tests/check_posfixa.c` linhas 9-20)
+
+| Entrada e saída de Dados
+| Inicio do Programa
+| Função `main()`
+| Construir o Menu e avaliar se diferentes expressões funcionam
+| Considerar parênteses, colchetes e chaves bem como qualquer número pertencente aos reais.
+| Testes na execução do programa
+
+| Validação da Expressão
+| Resolução de Expressão
+| Função `check_infixa()` (`src/posfixa.c`)
+| Checar se a entrada na forma infixa é válida
+| Dada uma expressão infixa (usual) tanto na forma numérica quanto com variáveis alfabéticas, avalia a correta colocação dos parênteses
+| Unit tests passaram com 100% de sucesso (`tests/check_posfixa.c` linhas 9-20)
+
+| Transformação da forma infixa para posfixa
+| Resolução de Expressão
+| Função `avalia_posfixa()` (`src/posfixa.c`)
+| Transformar a expressão na sua forma posfixa
+| Dada uma expressão válida na forma infixa (usual), transforma-a para a forma posfixa
+| Unit tests passaram com 100% de sucesso (`tests/check_posfixa.c`)
+
+| Avaliação da expressão na forma posfixa
+| Resolução de Expressão
+| Função `avalia_posfixa()` (`src/posfixa.c`)
+| Calcula o valor final de uma expressão posfixa
+| Entrando com uma expressão na forma posfixa, na qual os operadores encontram-se separados dos operandos por um ou mais espaços, a função realiza as operações e calcula o valor final. Quando a entrada possui operandos negativos, o sinal deve se encontrar adjacente ao número (sem separação)
+| Unit tests passaram com 100% de sucesso (`tests/check_posfixa.c`)
+
+| Construção da Calculadora
+| Calculadora
+| Funções implementadas no arquivo `src/calculadora.c`
+| Executa as operações básicas especificadas
+| Usar uma pilha como estrutura de dados e considerar números inteiros, fracionados, positivos e negativos
+| Testes através da execução e avaliação dos resultados
+
+|===

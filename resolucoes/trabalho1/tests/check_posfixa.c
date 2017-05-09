@@ -13,20 +13,25 @@ START_TEST(test_behaviour_posfixa)
   char expr5[50] = ")3+b*(2-c)(";// forma infixa INcorreta
 
   // Checar validade das expressoes propostas acima
-  ck_assert_int_eq( check_infixa ( expr1), 1);
-  ck_assert_int_eq( check_infixa ( expr2), 1);
-  ck_assert_int_eq( check_infixa ( expr3), 0);
-  ck_assert_int_eq( check_infixa ( expr4), 0);
-  ck_assert_int_eq( check_infixa ( expr5), 0);
+  ck_assert_int_eq( check_infixa (expr1), 1);
+  ck_assert_int_eq( check_infixa (expr2), 1);
+  ck_assert_int_eq( check_infixa (expr3), 0);
+  ck_assert_int_eq( check_infixa (expr4), 0);
+  ck_assert_int_eq( check_infixa (expr5), 0);
 
   // Avaliar o resultado das expressoes posfixas
   char expr1Pos[50] = "6 2 3 + *";
-  t_pilha *pilha;
+  t_pilha *result_pos;
+  result_pos = avalia_posfixa (expr1Pos);
+  ck_assert_float_eq( result_pos->stack[result_pos->p].element.fval, 30.0 );
 
-  pilha = avalia_posfixa (expr1Pos);
-  //ck_assert_msg ((pilha->stack[0].element.fval == 30),
-  //                "Result %d", pilha->stack[0].element.fval);
+  char expr2Pos[50] = "6 2.5 7.5 + *";
+  result_pos = avalia_posfixa (expr2Pos);
+  ck_assert_float_eq( result_pos->stack[result_pos->p].element.fval, 60.0 );
 
+  char expr3Pos[50] = "5 -2.5 7.5 + *";
+  result_pos = avalia_posfixa (expr3Pos);
+  ck_assert_float_eq( result_pos->stack[result_pos->p].element.fval, 25.0 );
 
 }
 END_TEST

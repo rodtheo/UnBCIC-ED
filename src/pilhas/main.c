@@ -7,31 +7,35 @@ int main(){
   // Ponteiro para elemento septr e elemento se
   struct stackelement *septr, se;
 
+  initia (sptr);
+
   // Exemplo usando ponteiros para as structs
-  sptr->top = 0;
-  sptr->items[sptr->top].element.fval = 3.5;
-  septr = &sptr->items[sptr->top];
-  septr->etype = FLT;
+  // sptr->top = 0;
+  // sptr->items[sptr->top].element.fval = 3.5;
+  // septr = &sptr->items[sptr->top];
+  // septr->etype = FLT;
 
-  print_elem (septr);
-
-  // Exemplo usando as structs brutas
-  s.items[s.top].element.ival = 21;
-  se = s.items[s.top];
-  se.etype = INTGR;
-
-  print_elem (&se);
+  // print_elem (septr);
 
   // Exemplo usando as structs brutas
-  s.items[s.top].element.cval = 'a';
-  se = s.items[s.top];
-  se.etype = CHR;
+  // s.items[s.top].element.ival = 21;
+  // se = s.items[s.top];
+  // se.etype = INTGR;
 
-  print_elem (&se);
+  // print_elem (&se);
 
-  push (sptr, 10);
-  pop (sptr, septr);
-  print_elem (septr);
+  // Exemplo usando as structs brutas
+  // s.items[s.top].element.cval = 'a';
+  // se = s.items[s.top];
+  // se.etype = CHR;
+
+  // print_elem (&se);
+
+  push_int (sptr, 10);
+  // pop (sptr, septr);
+  // print_elem (septr);
+
+  print_stack (sptr);
 
   // print_stack (sptr);
 

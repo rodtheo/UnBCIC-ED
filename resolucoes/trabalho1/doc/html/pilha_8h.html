@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho 1: Referência ao ficheiro /Users/rafaeltheodoro/Documents/Rodrigo/UnBCIC-ED/resolucoes/trabalho1/include/pilha.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Trabalho 1
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Componentes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Definições de tipos</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro pilha.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Arquivo contendo as definições, struct e funções para criar uma estrutura do tipo pilha bem como realizar operações como inserir (push), retirar (pop) e checar se a mesma está vazia (empty).  
+<a href="#details">Mais...</a></p>
+
+<p><a href="pilha_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structelement_pilha.html">elementPilha</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elementos que constituem a pilha genérica.  <a href="structelement_pilha.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpilha.html">pilha</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Composição da struct pilha Genérica.  <a href="structpilha.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a21d9543c516fffee84a7963224271f95"><td class="memItemLeft" align="right" valign="top"><a id="a21d9543c516fffee84a7963224271f95"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>STACKSIZE</b>&#160;&#160;&#160;1001</td></tr>
+<tr class="separator:a21d9543c516fffee84a7963224271f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59990369239024c94cbe22080c9d29c3"><td class="memItemLeft" align="right" valign="top"><a id="a59990369239024c94cbe22080c9d29c3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NLINES</b>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:a59990369239024c94cbe22080c9d29c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03ffc4c4106216114fc8c7f20a94ac4a"><td class="memItemLeft" align="right" valign="top"><a id="a03ffc4c4106216114fc8c7f20a94ac4a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SIZEWORD</b>&#160;&#160;&#160;1000</td></tr>
+<tr class="separator:a03ffc4c4106216114fc8c7f20a94ac4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6f30425a8221b25e8ebf4cdeb804b0e"><td class="memItemLeft" align="right" valign="top"><a id="ac6f30425a8221b25e8ebf4cdeb804b0e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TINT</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:ac6f30425a8221b25e8ebf4cdeb804b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65c91f8d7af3c67b8a21e089fdddd0fe"><td class="memItemLeft" align="right" valign="top"><a id="a65c91f8d7af3c67b8a21e089fdddd0fe"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TCHAR</b>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a65c91f8d7af3c67b8a21e089fdddd0fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5880987aafef47e2066dff5454584d2c"><td class="memItemLeft" align="right" valign="top"><a id="a5880987aafef47e2066dff5454584d2c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TFLOAT</b>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a5880987aafef47e2066dff5454584d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Definições de tipos</h2></td></tr>
+<tr class="memitem:a61313ac15d78805dad3fa62f9f0ccd80"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structelement_pilha.html">elementPilha</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilha_8h.html#a61313ac15d78805dad3fa62f9f0ccd80">t_elementPilha</a></td></tr>
+<tr class="memdesc:a61313ac15d78805dad3fa62f9f0ccd80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elementos que constituem a pilha genérica.  <a href="#a61313ac15d78805dad3fa62f9f0ccd80">Mais...</a><br /></td></tr>
+<tr class="separator:a61313ac15d78805dad3fa62f9f0ccd80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31cd73f7dcaabf29492c8667305555a3"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structpilha.html">pilha</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a></td></tr>
+<tr class="memdesc:a31cd73f7dcaabf29492c8667305555a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Composição da struct pilha Genérica.  <a href="#a31cd73f7dcaabf29492c8667305555a3">Mais...</a><br /></td></tr>
+<tr class="separator:a31cd73f7dcaabf29492c8667305555a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:ab81264872354d455ca6b171f241a880e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilha_8h.html#ab81264872354d455ca6b171f241a880e">get_pilha</a> ()</td></tr>
+<tr class="separator:ab81264872354d455ca6b171f241a880e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64c569d39e94d418eabe8c360d6887e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilha_8h.html#a64c569d39e94d418eabe8c360d6887e9">top</a> (<a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *<a class="el" href="structpilha.html">pilha</a>)</td></tr>
+<tr class="separator:a64c569d39e94d418eabe8c360d6887e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52e78495371f52e52c13d50cb1dbba6c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilha_8h.html#a52e78495371f52e52c13d50cb1dbba6c">push_float</a> (<a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *<a class="el" href="structpilha.html">pilha</a>, float valor)</td></tr>
+<tr class="separator:a52e78495371f52e52c13d50cb1dbba6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f1cf3966a73983fb7a84973c11adbb3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilha_8h.html#a4f1cf3966a73983fb7a84973c11adbb3">push_int</a> (<a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *<a class="el" href="structpilha.html">pilha</a>, int valor)</td></tr>
+<tr class="separator:a4f1cf3966a73983fb7a84973c11adbb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a1056d41fac1b54065bc87f00fc8bd5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilha_8h.html#a9a1056d41fac1b54065bc87f00fc8bd5">push_char</a> (<a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *<a class="el" href="structpilha.html">pilha</a>, char *pvalor)</td></tr>
+<tr class="separator:a9a1056d41fac1b54065bc87f00fc8bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca1b5caedd0d627603bca9743f529f7a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilha_8h.html#aca1b5caedd0d627603bca9743f529f7a">pop</a> (<a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *<a class="el" href="structpilha.html">pilha</a>, <a class="el" href="pilha_8h.html#a61313ac15d78805dad3fa62f9f0ccd80">t_elementPilha</a> *el)</td></tr>
+<tr class="separator:aca1b5caedd0d627603bca9743f529f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343eb34378df4d840071105f276170ce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilha_8h.html#a343eb34378df4d840071105f276170ce">empty</a> (<a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *<a class="el" href="structpilha.html">pilha</a>)</td></tr>
+<tr class="separator:a343eb34378df4d840071105f276170ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad0f587f5632f9c07f7e9f080e278b23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilha_8h.html#aad0f587f5632f9c07f7e9f080e278b23">free_pilha</a> (<a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *<a class="el" href="structpilha.html">pilha</a>)</td></tr>
+<tr class="separator:aad0f587f5632f9c07f7e9f080e278b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36172fef8abd2f8ca43246b08ff5a927"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilha_8h.html#a36172fef8abd2f8ca43246b08ff5a927">print_elem</a> (<a class="el" href="pilha_8h.html#a61313ac15d78805dad3fa62f9f0ccd80">t_elementPilha</a> *se)</td></tr>
+<tr class="separator:a36172fef8abd2f8ca43246b08ff5a927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad793875cb373738aedaa0a321a935d7e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilha_8h.html#ad793875cb373738aedaa0a321a935d7e">print_stack</a> (<a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *ps)</td></tr>
+<tr class="separator:ad793875cb373738aedaa0a321a935d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Arquivo contendo as definições, struct e funções para criar uma estrutura do tipo pilha bem como realizar operações como inserir (push), retirar (pop) e checar se a mesma está vazia (empty). </p>
+<dl class="section author"><dt>Autor</dt><dd>Rodrigo Theodoro Rocha </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>25 April 2016 </dd></dl>
+</div><h2 class="groupheader">Documentação dos tipos</h2>
+<a id="a61313ac15d78805dad3fa62f9f0ccd80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61313ac15d78805dad3fa62f9f0ccd80">&#9670;&nbsp;</a></span>t_elementPilha</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structelement_pilha.html">elementPilha</a>  <a class="el" href="pilha_8h.html#a61313ac15d78805dad3fa62f9f0ccd80">t_elementPilha</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elementos que constituem a pilha genérica. </p>
+<p>Os elementos podem ser do tipo int, char ou float. </p>
+
+</div>
+</div>
+<a id="a31cd73f7dcaabf29492c8667305555a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31cd73f7dcaabf29492c8667305555a3">&#9670;&nbsp;</a></span>t_pilha</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structpilha.html">pilha</a>  <a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Composição da struct pilha Genérica. </p>
+<p>A pilha é uma struct composta por um vetor de tamanho definido pela macro STACKSIZE e um inteiro que indicará o topo da pilha. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a343eb34378df4d840071105f276170ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a343eb34378df4d840071105f276170ce">&#9670;&nbsp;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int empty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *&#160;</td>
+          <td class="paramname"><em>pilha</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Avalia se a pilha está vazia. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pilha</td><td>Endereço da pilha. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>True se a pilha é vazia e False caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="aad0f587f5632f9c07f7e9f080e278b23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad0f587f5632f9c07f7e9f080e278b23">&#9670;&nbsp;</a></span>free_pilha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_pilha </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *&#160;</td>
+          <td class="paramname"><em>pilha</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Função para desalocar a pilha da memória </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pilha</td><td>Endereço da pilha a ser apagada. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab81264872354d455ca6b171f241a880e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab81264872354d455ca6b171f241a880e">&#9670;&nbsp;</a></span>get_pilha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a>* get_pilha </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Função para alocar a memória da pilha e setar o topo igual a zero (zero elementos). </p><dl class="section return"><dt>Retorna</dt><dd>O ponteiro para o endereço da pilha criada. </dd></dl>
+
+</div>
+</div>
+<a id="aca1b5caedd0d627603bca9743f529f7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca1b5caedd0d627603bca9743f529f7a">&#9670;&nbsp;</a></span>pop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *&#160;</td>
+          <td class="paramname"><em>pilha</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pilha_8h.html#a61313ac15d78805dad3fa62f9f0ccd80">t_elementPilha</a> *&#160;</td>
+          <td class="paramname"><em>el</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Retira o último elemento da <code>pilha</code> e armazena-o no ponteiro de char <code>el</code>. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pilha</td><td>Endereço da pilha criada com <a class="el" href="pilha_8h.html#ab81264872354d455ca6b171f241a880e">get_pilha</a>. </td></tr>
+    <tr><td class="paramname">el</td><td>Ponteiro de char para referenciar o elemento retirado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Retorna -1 se a pilha está vazia ou 1 se a função foi executada com sucesso. </dd></dl>
+
+</div>
+</div>
+<a id="a36172fef8abd2f8ca43246b08ff5a927"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36172fef8abd2f8ca43246b08ff5a927">&#9670;&nbsp;</a></span>print_elem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_elem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pilha_8h.html#a61313ac15d78805dad3fa62f9f0ccd80">t_elementPilha</a> *&#160;</td>
+          <td class="paramname"><em>se</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Função para imprimir um elemento da pilha genérica </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">se</td><td>Endereço do elemento </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad793875cb373738aedaa0a321a935d7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad793875cb373738aedaa0a321a935d7e">&#9670;&nbsp;</a></span>print_stack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int print_stack </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *&#160;</td>
+          <td class="paramname"><em>ps</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Imprimir a composição da pilha. Usado na função calculadora. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ps</td><td>Endereço da pilha genérica a ser impressa. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1, se válido. 0, caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="a9a1056d41fac1b54065bc87f00fc8bd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a1056d41fac1b54065bc87f00fc8bd5">&#9670;&nbsp;</a></span>push_char()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int push_char </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *&#160;</td>
+          <td class="paramname"><em>pilha</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>pvalor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Insere um caractere na pilha genérica. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pilha</td><td>Endereço da pilha. </td></tr>
+    <tr><td class="paramname">pvalor</td><td>Endereço do caractere. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1, se operação foi correta e 0, caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="a52e78495371f52e52c13d50cb1dbba6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52e78495371f52e52c13d50cb1dbba6c">&#9670;&nbsp;</a></span>push_float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int push_float </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *&#160;</td>
+          <td class="paramname"><em>pilha</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>valor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Insere um elemento do tipo float na pilha genérica. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pilha</td><td>Endereço da pilha. </td></tr>
+    <tr><td class="paramname">valor</td><td>Valor a ser inserido. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1, se operação foi correta e 0, caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="a4f1cf3966a73983fb7a84973c11adbb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f1cf3966a73983fb7a84973c11adbb3">&#9670;&nbsp;</a></span>push_int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int push_int </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *&#160;</td>
+          <td class="paramname"><em>pilha</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>valor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Insere um elemento do tipo inteiro na pilha genérica. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pilha</td><td>Endereço da pilha. </td></tr>
+    <tr><td class="paramname">valor</td><td>Inteiro para ser inserido. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1, se operação foi correta e 0, caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="a64c569d39e94d418eabe8c360d6887e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64c569d39e94d418eabe8c360d6887e9">&#9670;&nbsp;</a></span>top()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int top </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *&#160;</td>
+          <td class="paramname"><em>pilha</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Imprime o índice p do topo da pilha, isto é, a altura da pilha. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pilha</td><td>Endereço da pilha criada com <a class="el" href="pilha_8h.html#ab81264872354d455ca6b171f241a880e">get_pilha()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -2,6 +2,50 @@
 #include <stdlib.h>
 #include "pilha.h"
 
+int print_stack (t_pilha *ps){
+  int i;
+  if (ps->p >= 0){
+    printf ("\n");
+    printf("-----------------------------\n");
+    printf("Modo Calculadora\n");
+    printf("Digite 'o' para exibir as opcções da calculadora\n");
+    printf("-----------------------------\n");
+    // printf("%d\n", (ps->top));
+    for (i=(ps->p); i>=0; i--){
+      // printf("v[%d] %x ", i, &(ps->items[i].element));
+      printf("%d. ", i+1);
+      print_elem (&(ps->stack[i]));
+      // if (i==0) printf("<--- base (inicio)");
+      // if (i==ps->top) printf("<--- topo (fim)");
+      // printf ("\n");
+    }
+  } else {
+    printf ("\nA pilha esta vazia!!\n");
+  }
+  printf("\n");
+  return 0;
+}
+
+// #define TINT    2
+// #define TCHAR   3
+// #define TFLOAT  4
+
+void print_elem (t_elementPilha *se){
+  switch (se->etype){
+    case TFLOAT:
+      printf("%.2f\n", se->element.fval);
+      break;
+    case TCHAR:
+      printf("%c\n", *(se->element.cval));
+      break;
+    case TINT:
+      printf("%d\n", se->element.ival);
+      break;
+    default:
+      printf("Tipo desconhecido.\n");
+  }
+};
+
 void free_pilha (t_pilha *pilha){
   free (pilha);
 }
@@ -74,11 +118,12 @@ int push_char (t_pilha *pilha, char *pvalor) {
 
 int pop (t_pilha *pilha, t_elementPilha *el) {
   if (empty(pilha)){
+    printf("ERRO! UNDERFLOW!\n");
     return 0;
   }
   else{
     *el = pilha->stack[pilha->p];
-    pilha->p--;
+    (pilha->p)--;
     return 1;
   }
 }

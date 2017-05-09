@@ -58,18 +58,27 @@ t_pilha* get_pilha ();
 int top (t_pilha *pilha);
 
 /**
- * Insere um elemento do tipo char na pilha.
- * @param  pilha Endereço da pilha criada com get_pilha().
- * @param  valor Caractere a ser inserido na @p pilha.
- * @return       [description]
+ * Insere um elemento do tipo float na pilha genérica.
+ * @param  pilha Endereço da pilha.
+ * @param  valor Valor a ser inserido.
+ * @return       1, se operação foi correta e 0, caso contrário.
  */
-int push (t_pilha *pilha, char valor);
-
-
 int push_float (t_pilha *pilha, float valor);
 
+/**
+ * Insere um elemento do tipo inteiro na pilha genérica.
+ * @param  pilha Endereço da pilha.
+ * @param  valor Inteiro para ser inserido.
+ * @return       1, se operação foi correta e 0, caso contrário.
+ */
 int push_int (t_pilha *pilha, int valor);
 
+/**
+ * Insere um caractere na pilha genérica.
+ * @param  pilha  Endereço da pilha.
+ * @param  pvalor Endereço do caractere.
+ * @return        1, se operação foi correta e 0, caso contrário.
+ */
 int push_char (t_pilha *pilha, char *pvalor);
 
 /**
@@ -94,5 +103,17 @@ int empty (t_pilha *pilha);
  */
 void free_pilha (t_pilha *pilha);
 
+/**
+ * Função para imprimir um elemento da pilha genérica
+ * @param se Endereço do elemento
+ */
+void print_elem (t_elementPilha *se);
+
+/**
+ * Imprimir a composição da pilha. Usado na função calculadora.
+ * @param  ps Endereço da pilha genérica a ser impressa.
+ * @return    1, se válido. 0, caso contrário.
+ */
+int print_stack (t_pilha *ps);
 
 #endif /* __PILHA_H__ */

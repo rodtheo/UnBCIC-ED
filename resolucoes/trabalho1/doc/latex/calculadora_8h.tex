@@ -1,0 +1,90 @@
+\hypertarget{calculadora_8h}{}\section{Referência ao ficheiro /\+Users/rafaeltheodoro/\+Documents/\+Rodrigo/\+Un\+B\+C\+I\+C-\/\+E\+D/resolucoes/trabalho1/include/calculadora.h}
+\label{calculadora_8h}\index{/\+Users/rafaeltheodoro/\+Documents/\+Rodrigo/\+Un\+B\+C\+I\+C-\/\+E\+D/resolucoes/trabalho1/include/calculadora.\+h@{/\+Users/rafaeltheodoro/\+Documents/\+Rodrigo/\+Un\+B\+C\+I\+C-\/\+E\+D/resolucoes/trabalho1/include/calculadora.\+h}}
+
+
+Arquivo contendo as funções para implementar o funcionamento da calculadora.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/pilha.\+h\char`\"{}}\newline
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{calculadora_8h_a2405623ab7b93f8976482500a701c487}{apply\+\_\+operacao} (\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$stk, char c)
+\item 
+void \hyperlink{calculadora_8h_a46c569c6cde95742159849bc4a73548a}{apply\+\_\+copia\+\_\+el} (\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$stk)
+\item 
+void \hyperlink{calculadora_8h_a48afbe4db02a32fd7d604a2e7d44d6f0}{apply\+\_\+repeticao} (\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$stk, char c)
+\item 
+int \hyperlink{calculadora_8h_a8855160c7da41c03f26c36c44d8b4bbb}{apply\+\_\+operador} (float fopnd1, float fopnd2, char c)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Arquivo contendo as funções para implementar o funcionamento da calculadora. 
+
+\begin{DoxyAuthor}{Autor}
+Rodrigo Theodoro Rocha 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+25 April 2016 
+\end{DoxyDate}
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{calculadora_8h_a46c569c6cde95742159849bc4a73548a}\label{calculadora_8h_a46c569c6cde95742159849bc4a73548a}} 
+\index{calculadora.\+h@{calculadora.\+h}!apply\+\_\+copia\+\_\+el@{apply\+\_\+copia\+\_\+el}}
+\index{apply\+\_\+copia\+\_\+el@{apply\+\_\+copia\+\_\+el}!calculadora.\+h@{calculadora.\+h}}
+\subsubsection{\texorpdfstring{apply\+\_\+copia\+\_\+el()}{apply\_copia\_el()}}
+{\footnotesize\ttfamily void apply\+\_\+copia\+\_\+el (\begin{DoxyParamCaption}\item[{\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$}]{stk }\end{DoxyParamCaption})}
+
+Função usada na repetição de N vezes o elemento. 
+\begin{DoxyParams}{Parâmetros}
+{\em stk} & pilha \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{calculadora_8h_a2405623ab7b93f8976482500a701c487}\label{calculadora_8h_a2405623ab7b93f8976482500a701c487}} 
+\index{calculadora.\+h@{calculadora.\+h}!apply\+\_\+operacao@{apply\+\_\+operacao}}
+\index{apply\+\_\+operacao@{apply\+\_\+operacao}!calculadora.\+h@{calculadora.\+h}}
+\subsubsection{\texorpdfstring{apply\+\_\+operacao()}{apply\_operacao()}}
+{\footnotesize\ttfamily void apply\+\_\+operacao (\begin{DoxyParamCaption}\item[{\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$}]{stk,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+Aplica uma das 4 operações primárias nos 2 últimos elementos da pilha {\ttfamily stk}. 
+\begin{DoxyParams}{Parâmetros}
+{\em stk} & Endereço da pilha stk \\
+\hline
+{\em c} & Caractere do operador para executar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{calculadora_8h_a8855160c7da41c03f26c36c44d8b4bbb}\label{calculadora_8h_a8855160c7da41c03f26c36c44d8b4bbb}} 
+\index{calculadora.\+h@{calculadora.\+h}!apply\+\_\+operador@{apply\+\_\+operador}}
+\index{apply\+\_\+operador@{apply\+\_\+operador}!calculadora.\+h@{calculadora.\+h}}
+\subsubsection{\texorpdfstring{apply\+\_\+operador()}{apply\_operador()}}
+{\footnotesize\ttfamily int apply\+\_\+operador (\begin{DoxyParamCaption}\item[{float}]{fopnd1,  }\item[{float}]{fopnd2,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+Aplica a operação c nos 2 operandos especificados 
+\begin{DoxyParams}{Parâmetros}
+{\em fopnd1} & operando 1 \\
+\hline
+{\em fopnd2} & operando 2 \\
+\hline
+{\em c} & operador \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Retorna o valor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{calculadora_8h_a48afbe4db02a32fd7d604a2e7d44d6f0}\label{calculadora_8h_a48afbe4db02a32fd7d604a2e7d44d6f0}} 
+\index{calculadora.\+h@{calculadora.\+h}!apply\+\_\+repeticao@{apply\+\_\+repeticao}}
+\index{apply\+\_\+repeticao@{apply\+\_\+repeticao}!calculadora.\+h@{calculadora.\+h}}
+\subsubsection{\texorpdfstring{apply\+\_\+repeticao()}{apply\_repeticao()}}
+{\footnotesize\ttfamily void apply\+\_\+repeticao (\begin{DoxyParamCaption}\item[{\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$}]{stk,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+Aplica recursivamente a operação especificada pelo caractere c. 
+\begin{DoxyParams}{Parâmetros}
+{\em stk} & pilha \\
+\hline
+{\em c} & operador \\
+\hline
+\end{DoxyParams}

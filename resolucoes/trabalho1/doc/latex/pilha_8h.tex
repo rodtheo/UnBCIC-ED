@@ -1,0 +1,236 @@
+\hypertarget{pilha_8h}{}\section{Referência ao ficheiro /\+Users/rafaeltheodoro/\+Documents/\+Rodrigo/\+Un\+B\+C\+I\+C-\/\+E\+D/resolucoes/trabalho1/include/pilha.h}
+\label{pilha_8h}\index{/\+Users/rafaeltheodoro/\+Documents/\+Rodrigo/\+Un\+B\+C\+I\+C-\/\+E\+D/resolucoes/trabalho1/include/pilha.\+h@{/\+Users/rafaeltheodoro/\+Documents/\+Rodrigo/\+Un\+B\+C\+I\+C-\/\+E\+D/resolucoes/trabalho1/include/pilha.\+h}}
+
+
+Arquivo contendo as definições, struct e funções para criar uma estrutura do tipo pilha bem como realizar operações como inserir (push), retirar (pop) e checar se a mesma está vazia (empty).  
+
+
+\subsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structelement_pilha}{element\+Pilha}
+\begin{DoxyCompactList}\small\item\em Elementos que constituem a pilha genérica. \end{DoxyCompactList}\item 
+struct \hyperlink{structpilha}{pilha}
+\begin{DoxyCompactList}\small\item\em Composição da struct pilha Genérica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{pilha_8h_a21d9543c516fffee84a7963224271f95}\label{pilha_8h_a21d9543c516fffee84a7963224271f95}} 
+\#define {\bfseries S\+T\+A\+C\+K\+S\+I\+ZE}~1001
+\item 
+\mbox{\Hypertarget{pilha_8h_a59990369239024c94cbe22080c9d29c3}\label{pilha_8h_a59990369239024c94cbe22080c9d29c3}} 
+\#define {\bfseries N\+L\+I\+N\+ES}~6
+\item 
+\mbox{\Hypertarget{pilha_8h_a03ffc4c4106216114fc8c7f20a94ac4a}\label{pilha_8h_a03ffc4c4106216114fc8c7f20a94ac4a}} 
+\#define {\bfseries S\+I\+Z\+E\+W\+O\+RD}~1000
+\item 
+\mbox{\Hypertarget{pilha_8h_ac6f30425a8221b25e8ebf4cdeb804b0e}\label{pilha_8h_ac6f30425a8221b25e8ebf4cdeb804b0e}} 
+\#define {\bfseries T\+I\+NT}~2
+\item 
+\mbox{\Hypertarget{pilha_8h_a65c91f8d7af3c67b8a21e089fdddd0fe}\label{pilha_8h_a65c91f8d7af3c67b8a21e089fdddd0fe}} 
+\#define {\bfseries T\+C\+H\+AR}~3
+\item 
+\mbox{\Hypertarget{pilha_8h_a5880987aafef47e2066dff5454584d2c}\label{pilha_8h_a5880987aafef47e2066dff5454584d2c}} 
+\#define {\bfseries T\+F\+L\+O\+AT}~4
+\end{DoxyCompactItemize}
+\subsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structelement_pilha}{element\+Pilha} \hyperlink{pilha_8h_a61313ac15d78805dad3fa62f9f0ccd80}{t\+\_\+element\+Pilha}
+\begin{DoxyCompactList}\small\item\em Elementos que constituem a pilha genérica. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structpilha}{pilha} \hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha}
+\begin{DoxyCompactList}\small\item\em Composição da struct pilha Genérica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$ \hyperlink{pilha_8h_ab81264872354d455ca6b171f241a880e}{get\+\_\+pilha} ()
+\item 
+int \hyperlink{pilha_8h_a64c569d39e94d418eabe8c360d6887e9}{top} (\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$\hyperlink{structpilha}{pilha})
+\item 
+int \hyperlink{pilha_8h_a52e78495371f52e52c13d50cb1dbba6c}{push\+\_\+float} (\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$\hyperlink{structpilha}{pilha}, float valor)
+\item 
+int \hyperlink{pilha_8h_a4f1cf3966a73983fb7a84973c11adbb3}{push\+\_\+int} (\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$\hyperlink{structpilha}{pilha}, int valor)
+\item 
+int \hyperlink{pilha_8h_a9a1056d41fac1b54065bc87f00fc8bd5}{push\+\_\+char} (\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$\hyperlink{structpilha}{pilha}, char $\ast$pvalor)
+\item 
+int \hyperlink{pilha_8h_aca1b5caedd0d627603bca9743f529f7a}{pop} (\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$\hyperlink{structpilha}{pilha}, \hyperlink{pilha_8h_a61313ac15d78805dad3fa62f9f0ccd80}{t\+\_\+element\+Pilha} $\ast$el)
+\item 
+int \hyperlink{pilha_8h_a343eb34378df4d840071105f276170ce}{empty} (\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$\hyperlink{structpilha}{pilha})
+\item 
+void \hyperlink{pilha_8h_aad0f587f5632f9c07f7e9f080e278b23}{free\+\_\+pilha} (\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$\hyperlink{structpilha}{pilha})
+\item 
+void \hyperlink{pilha_8h_a36172fef8abd2f8ca43246b08ff5a927}{print\+\_\+elem} (\hyperlink{pilha_8h_a61313ac15d78805dad3fa62f9f0ccd80}{t\+\_\+element\+Pilha} $\ast$se)
+\item 
+int \hyperlink{pilha_8h_ad793875cb373738aedaa0a321a935d7e}{print\+\_\+stack} (\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$ps)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Arquivo contendo as definições, struct e funções para criar uma estrutura do tipo pilha bem como realizar operações como inserir (push), retirar (pop) e checar se a mesma está vazia (empty). 
+
+\begin{DoxyAuthor}{Autor}
+Rodrigo Theodoro Rocha 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+25 April 2016 
+\end{DoxyDate}
+
+
+\subsection{Documentação dos tipos}
+\mbox{\Hypertarget{pilha_8h_a61313ac15d78805dad3fa62f9f0ccd80}\label{pilha_8h_a61313ac15d78805dad3fa62f9f0ccd80}} 
+\index{pilha.\+h@{pilha.\+h}!t\+\_\+element\+Pilha@{t\+\_\+element\+Pilha}}
+\index{t\+\_\+element\+Pilha@{t\+\_\+element\+Pilha}!pilha.\+h@{pilha.\+h}}
+\subsubsection{\texorpdfstring{t\+\_\+element\+Pilha}{t\_elementPilha}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structelement_pilha}{element\+Pilha}  \hyperlink{pilha_8h_a61313ac15d78805dad3fa62f9f0ccd80}{t\+\_\+element\+Pilha}}
+
+
+
+Elementos que constituem a pilha genérica. 
+
+Os elementos podem ser do tipo int, char ou float. \mbox{\Hypertarget{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}\label{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}} 
+\index{pilha.\+h@{pilha.\+h}!t\+\_\+pilha@{t\+\_\+pilha}}
+\index{t\+\_\+pilha@{t\+\_\+pilha}!pilha.\+h@{pilha.\+h}}
+\subsubsection{\texorpdfstring{t\+\_\+pilha}{t\_pilha}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structpilha}{pilha}  \hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha}}
+
+
+
+Composição da struct pilha Genérica. 
+
+A pilha é uma struct composta por um vetor de tamanho definido pela macro S\+T\+A\+C\+K\+S\+I\+ZE e um inteiro que indicará o topo da pilha. 
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{pilha_8h_a343eb34378df4d840071105f276170ce}\label{pilha_8h_a343eb34378df4d840071105f276170ce}} 
+\index{pilha.\+h@{pilha.\+h}!empty@{empty}}
+\index{empty@{empty}!pilha.\+h@{pilha.\+h}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily int empty (\begin{DoxyParamCaption}\item[{\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$}]{pilha }\end{DoxyParamCaption})}
+
+Avalia se a pilha está vazia. 
+\begin{DoxyParams}{Parâmetros}
+{\em pilha} & Endereço da pilha. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+True se a pilha é vazia e False caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pilha_8h_aad0f587f5632f9c07f7e9f080e278b23}\label{pilha_8h_aad0f587f5632f9c07f7e9f080e278b23}} 
+\index{pilha.\+h@{pilha.\+h}!free\+\_\+pilha@{free\+\_\+pilha}}
+\index{free\+\_\+pilha@{free\+\_\+pilha}!pilha.\+h@{pilha.\+h}}
+\subsubsection{\texorpdfstring{free\+\_\+pilha()}{free\_pilha()}}
+{\footnotesize\ttfamily void free\+\_\+pilha (\begin{DoxyParamCaption}\item[{\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$}]{pilha }\end{DoxyParamCaption})}
+
+Função para desalocar a pilha da memória 
+\begin{DoxyParams}{Parâmetros}
+{\em pilha} & Endereço da pilha a ser apagada. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pilha_8h_ab81264872354d455ca6b171f241a880e}\label{pilha_8h_ab81264872354d455ca6b171f241a880e}} 
+\index{pilha.\+h@{pilha.\+h}!get\+\_\+pilha@{get\+\_\+pilha}}
+\index{get\+\_\+pilha@{get\+\_\+pilha}!pilha.\+h@{pilha.\+h}}
+\subsubsection{\texorpdfstring{get\+\_\+pilha()}{get\_pilha()}}
+{\footnotesize\ttfamily \hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha}$\ast$ get\+\_\+pilha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Função para alocar a memória da pilha e setar o topo igual a zero (zero elementos). \begin{DoxyReturn}{Retorna}
+O ponteiro para o endereço da pilha criada. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pilha_8h_aca1b5caedd0d627603bca9743f529f7a}\label{pilha_8h_aca1b5caedd0d627603bca9743f529f7a}} 
+\index{pilha.\+h@{pilha.\+h}!pop@{pop}}
+\index{pop@{pop}!pilha.\+h@{pilha.\+h}}
+\subsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily int pop (\begin{DoxyParamCaption}\item[{\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$}]{pilha,  }\item[{\hyperlink{pilha_8h_a61313ac15d78805dad3fa62f9f0ccd80}{t\+\_\+element\+Pilha} $\ast$}]{el }\end{DoxyParamCaption})}
+
+Retira o último elemento da {\ttfamily pilha} e armazena-\/o no ponteiro de char {\ttfamily el}. 
+\begin{DoxyParams}{Parâmetros}
+{\em pilha} & Endereço da pilha criada com \hyperlink{pilha_8h_ab81264872354d455ca6b171f241a880e}{get\+\_\+pilha}. \\
+\hline
+{\em el} & Ponteiro de char para referenciar o elemento retirado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Retorna -\/1 se a pilha está vazia ou 1 se a função foi executada com sucesso. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pilha_8h_a36172fef8abd2f8ca43246b08ff5a927}\label{pilha_8h_a36172fef8abd2f8ca43246b08ff5a927}} 
+\index{pilha.\+h@{pilha.\+h}!print\+\_\+elem@{print\+\_\+elem}}
+\index{print\+\_\+elem@{print\+\_\+elem}!pilha.\+h@{pilha.\+h}}
+\subsubsection{\texorpdfstring{print\+\_\+elem()}{print\_elem()}}
+{\footnotesize\ttfamily void print\+\_\+elem (\begin{DoxyParamCaption}\item[{\hyperlink{pilha_8h_a61313ac15d78805dad3fa62f9f0ccd80}{t\+\_\+element\+Pilha} $\ast$}]{se }\end{DoxyParamCaption})}
+
+Função para imprimir um elemento da pilha genérica 
+\begin{DoxyParams}{Parâmetros}
+{\em se} & Endereço do elemento \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pilha_8h_ad793875cb373738aedaa0a321a935d7e}\label{pilha_8h_ad793875cb373738aedaa0a321a935d7e}} 
+\index{pilha.\+h@{pilha.\+h}!print\+\_\+stack@{print\+\_\+stack}}
+\index{print\+\_\+stack@{print\+\_\+stack}!pilha.\+h@{pilha.\+h}}
+\subsubsection{\texorpdfstring{print\+\_\+stack()}{print\_stack()}}
+{\footnotesize\ttfamily int print\+\_\+stack (\begin{DoxyParamCaption}\item[{\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$}]{ps }\end{DoxyParamCaption})}
+
+Imprimir a composição da pilha. Usado na função calculadora. 
+\begin{DoxyParams}{Parâmetros}
+{\em ps} & Endereço da pilha genérica a ser impressa. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+1, se válido. 0, caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pilha_8h_a9a1056d41fac1b54065bc87f00fc8bd5}\label{pilha_8h_a9a1056d41fac1b54065bc87f00fc8bd5}} 
+\index{pilha.\+h@{pilha.\+h}!push\+\_\+char@{push\+\_\+char}}
+\index{push\+\_\+char@{push\+\_\+char}!pilha.\+h@{pilha.\+h}}
+\subsubsection{\texorpdfstring{push\+\_\+char()}{push\_char()}}
+{\footnotesize\ttfamily int push\+\_\+char (\begin{DoxyParamCaption}\item[{\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$}]{pilha,  }\item[{char $\ast$}]{pvalor }\end{DoxyParamCaption})}
+
+Insere um caractere na pilha genérica. 
+\begin{DoxyParams}{Parâmetros}
+{\em pilha} & Endereço da pilha. \\
+\hline
+{\em pvalor} & Endereço do caractere. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+1, se operação foi correta e 0, caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pilha_8h_a52e78495371f52e52c13d50cb1dbba6c}\label{pilha_8h_a52e78495371f52e52c13d50cb1dbba6c}} 
+\index{pilha.\+h@{pilha.\+h}!push\+\_\+float@{push\+\_\+float}}
+\index{push\+\_\+float@{push\+\_\+float}!pilha.\+h@{pilha.\+h}}
+\subsubsection{\texorpdfstring{push\+\_\+float()}{push\_float()}}
+{\footnotesize\ttfamily int push\+\_\+float (\begin{DoxyParamCaption}\item[{\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$}]{pilha,  }\item[{float}]{valor }\end{DoxyParamCaption})}
+
+Insere um elemento do tipo float na pilha genérica. 
+\begin{DoxyParams}{Parâmetros}
+{\em pilha} & Endereço da pilha. \\
+\hline
+{\em valor} & Valor a ser inserido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+1, se operação foi correta e 0, caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pilha_8h_a4f1cf3966a73983fb7a84973c11adbb3}\label{pilha_8h_a4f1cf3966a73983fb7a84973c11adbb3}} 
+\index{pilha.\+h@{pilha.\+h}!push\+\_\+int@{push\+\_\+int}}
+\index{push\+\_\+int@{push\+\_\+int}!pilha.\+h@{pilha.\+h}}
+\subsubsection{\texorpdfstring{push\+\_\+int()}{push\_int()}}
+{\footnotesize\ttfamily int push\+\_\+int (\begin{DoxyParamCaption}\item[{\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$}]{pilha,  }\item[{int}]{valor }\end{DoxyParamCaption})}
+
+Insere um elemento do tipo inteiro na pilha genérica. 
+\begin{DoxyParams}{Parâmetros}
+{\em pilha} & Endereço da pilha. \\
+\hline
+{\em valor} & Inteiro para ser inserido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+1, se operação foi correta e 0, caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pilha_8h_a64c569d39e94d418eabe8c360d6887e9}\label{pilha_8h_a64c569d39e94d418eabe8c360d6887e9}} 
+\index{pilha.\+h@{pilha.\+h}!top@{top}}
+\index{top@{top}!pilha.\+h@{pilha.\+h}}
+\subsubsection{\texorpdfstring{top()}{top()}}
+{\footnotesize\ttfamily int top (\begin{DoxyParamCaption}\item[{\hyperlink{pilha_8h_a31cd73f7dcaabf29492c8667305555a3}{t\+\_\+pilha} $\ast$}]{pilha }\end{DoxyParamCaption})}
+
+Imprime o índice p do topo da pilha, isto é, a altura da pilha. 
+\begin{DoxyParams}{Parâmetros}
+{\em pilha} & Endereço da pilha criada com \hyperlink{pilha_8h_ab81264872354d455ca6b171f241a880e}{get\+\_\+pilha()}. \\
+\hline
+\end{DoxyParams}

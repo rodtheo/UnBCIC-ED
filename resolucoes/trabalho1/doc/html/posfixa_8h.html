@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho 1: Referência ao ficheiro /Users/rafaeltheodoro/Documents/Rodrigo/UnBCIC-ED/resolucoes/trabalho1/include/posfixa.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Trabalho 1
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro posfixa.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Arquivo contendo as assinaturas das funções implementadas para executar as operações de validação das expressões infixa (usual), conversão das expressões infixas para posfixas, avaliação do resultado das expressões posfixa. O arquivo também contem implmentações das funções auxiliares como por exemplo substituir chaves e colchetes por parênteses ( <a class="el" href="posfixa_8h.html#ac2f008d50cbb07ae5bf7acd1853f9f20">replace()</a> ).  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="pilha_8h_source.html">pilha.h</a>&quot;</code><br />
+</div>
+<p><a href="posfixa_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a5850fac357e2c72c45fc11f24fc32465"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posfixa_8h.html#a5850fac357e2c72c45fc11f24fc32465">check_infixa</a> (char *expr)</td></tr>
+<tr class="separator:a5850fac357e2c72c45fc11f24fc32465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcb8cf4ba18ad43ea5c643b027cf0170"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posfixa_8h.html#afcb8cf4ba18ad43ea5c643b027cf0170">is_digit</a> (char c)</td></tr>
+<tr class="separator:afcb8cf4ba18ad43ea5c643b027cf0170"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a136a74c2b97f0436f5b86153f80af183"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posfixa_8h.html#a136a74c2b97f0436f5b86153f80af183">avalia_posfixa</a> (char *expr)</td></tr>
+<tr class="separator:a136a74c2b97f0436f5b86153f80af183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a337bc5943083a1978b779557b7d59664"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posfixa_8h.html#a337bc5943083a1978b779557b7d59664">prcd</a> (char opr1, char opr2)</td></tr>
+<tr class="separator:a337bc5943083a1978b779557b7d59664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa169b8c88a61692ce5d7380883366824"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posfixa_8h.html#aa169b8c88a61692ce5d7380883366824">infixa_to_posfixa</a> (char expr[], char exprSaida[])</td></tr>
+<tr class="separator:aa169b8c88a61692ce5d7380883366824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6327615d50c4c5f7776895d5d79f52a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posfixa_8h.html#ad6327615d50c4c5f7776895d5d79f52a">is_operador</a> (char c)</td></tr>
+<tr class="separator:ad6327615d50c4c5f7776895d5d79f52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4312b004f59ef2e45e54a27950223a01"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posfixa_8h.html#a4312b004f59ef2e45e54a27950223a01">is_point</a> (char c)</td></tr>
+<tr class="separator:a4312b004f59ef2e45e54a27950223a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab11d2ae06f35c2fd4a427ca3f20cf4b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posfixa_8h.html#ab11d2ae06f35c2fd4a427ca3f20cf4b5">RemoveNewLines</a> (char *source)</td></tr>
+<tr class="separator:ab11d2ae06f35c2fd4a427ca3f20cf4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2f008d50cbb07ae5bf7acd1853f9f20"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posfixa_8h.html#ac2f008d50cbb07ae5bf7acd1853f9f20">replace</a> (const char *s)</td></tr>
+<tr class="separator:ac2f008d50cbb07ae5bf7acd1853f9f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Arquivo contendo as assinaturas das funções implementadas para executar as operações de validação das expressões infixa (usual), conversão das expressões infixas para posfixas, avaliação do resultado das expressões posfixa. O arquivo também contem implmentações das funções auxiliares como por exemplo substituir chaves e colchetes por parênteses ( <a class="el" href="posfixa_8h.html#ac2f008d50cbb07ae5bf7acd1853f9f20">replace()</a> ). </p>
+<dl class="section author"><dt>Autor</dt><dd>Rodrigo Theodoro Rocha </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>25 April 2016 </dd></dl>
+</div><h2 class="groupheader">Documentação das funções</h2>
+<a id="a136a74c2b97f0436f5b86153f80af183"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a136a74c2b97f0436f5b86153f80af183">&#9670;&nbsp;</a></span>avalia_posfixa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a>* avalia_posfixa </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>expr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dada uma expressão na forma infixa calcula o resultado da mesma. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expr</td><td>Entrada na forma infixa respeitando-se as notações no manual. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Endereço de uma pilha onde o único elemento, no topo, é um float. </dd></dl>
+
+</div>
+</div>
+<a id="a5850fac357e2c72c45fc11f24fc32465"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5850fac357e2c72c45fc11f24fc32465">&#9670;&nbsp;</a></span>check_infixa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int check_infixa </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>expr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Função que avalia se uma expressão passada no parâmetro <code>linha</code> é uma expressão infixa (usual) válida. Avalia se os parênteses são restrições válidas.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pilha</td><td>Endereço da estrutura da pilha <em>vazia</em> para auxiliar na determinação da validade da expressão. </td></tr>
+    <tr><td class="paramname">linha</td><td>Ponteiro para ponteiro da forma char referenciando uma expressão da forma infixa (usual). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa169b8c88a61692ce5d7380883366824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa169b8c88a61692ce5d7380883366824">&#9670;&nbsp;</a></span>infixa_to_posfixa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void infixa_to_posfixa </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>expr</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>exprSaida</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Converte uma expressão na forma posfixa para a infixa. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expr</td><td>Entrada da expressão infixa. </td></tr>
+    <tr><td class="paramname">exprSaida</td><td>Endereço da expressão final. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afcb8cf4ba18ad43ea5c643b027cf0170"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcb8cf4ba18ad43ea5c643b027cf0170">&#9670;&nbsp;</a></span>is_digit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_digit </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Função auxiliar para testar se o caractere <code>c</code> é um digito (entre 0-9). </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Caractere de entrada. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1, se <code>c</code> é um digito. </dd></dl>
+
+</div>
+</div>
+<a id="ad6327615d50c4c5f7776895d5d79f52a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6327615d50c4c5f7776895d5d79f52a">&#9670;&nbsp;</a></span>is_operador()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_operador </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Avalia se o caractere é um operador. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Caractere </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1, se <code>c</code> é operador. 0, caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="a4312b004f59ef2e45e54a27950223a01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4312b004f59ef2e45e54a27950223a01">&#9670;&nbsp;</a></span>is_point()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_point </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Avalia se o caractere é um ponto. Para permitir números fracionados. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Caractere. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1, se <code>c</code> é um ponto. 0, cc. </dd></dl>
+
+</div>
+</div>
+<a id="a337bc5943083a1978b779557b7d59664"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a337bc5943083a1978b779557b7d59664">&#9670;&nbsp;</a></span>prcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int prcd </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>opr1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>opr2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Estabelece a procedência dos operadores e parênteses para converter corretamente a expressão para a forma posfixa. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opr1</td><td>Operador </td></tr>
+    <tr><td class="paramname">opr2</td><td>Operador </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1, se o <code>opr1</code> tem maior ou igual procedência ao operador <code>opr2</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ab11d2ae06f35c2fd4a427ca3f20cf4b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab11d2ae06f35c2fd4a427ca3f20cf4b5">&#9670;&nbsp;</a></span>RemoveNewLines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RemoveNewLines </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>source</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Remove caractere de nova linha <br />
+ de uma string. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>Endereço da string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac2f008d50cbb07ae5bf7acd1853f9f20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2f008d50cbb07ae5bf7acd1853f9f20">&#9670;&nbsp;</a></span>replace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* replace </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Substitui chaves ({,}), colchetes ([,]) pelo parêntese correspondente. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>String. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Endereço da string com as substituições. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

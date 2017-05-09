@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho 1: Código-Fonte de /Users/rafaeltheodoro/Documents/Rodrigo/UnBCIC-ED/resolucoes/trabalho1/include/pilha.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Trabalho 1
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">pilha.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="pilha_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef __PILHA_H__</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define __PILHA_H__</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define STACKSIZE 1001</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define NLINES 6</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define SIZEWORD 1000</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define TINT    2</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define TCHAR   3</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define TFLOAT  4</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structelement_pilha.html">   26</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structelement_pilha.html">elementPilha</a> {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">int</span> etype;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">union </span>{</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">char</span> *cval; <span class="comment">/* Ponteiro para uma string */</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> ival;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">float</span> fval;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  } element;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;} <a class="code" href="pilha_8h.html#a61313ac15d78805dad3fa62f9f0ccd80">t_elementPilha</a>;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structpilha.html">   41</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structpilha.html">pilha</a> {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">struct </span><a class="code" href="structelement_pilha.html">elementPilha</a> stack[STACKSIZE];</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">int</span> p;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <a class="code" href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a>;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<a class="code" href="structpilha.html">t_pilha</a>* <a class="code" href="pilha_8h.html#ab81264872354d455ca6b171f241a880e">get_pilha</a> ();</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">int</span> <a class="code" href="pilha_8h.html#a64c569d39e94d418eabe8c360d6887e9">top</a> (<a class="code" href="structpilha.html">t_pilha</a> *<a class="code" href="structpilha.html">pilha</a>);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">int</span> <a class="code" href="pilha_8h.html#a52e78495371f52e52c13d50cb1dbba6c">push_float</a> (<a class="code" href="structpilha.html">t_pilha</a> *pilha, <span class="keywordtype">float</span> valor);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">int</span> <a class="code" href="pilha_8h.html#a4f1cf3966a73983fb7a84973c11adbb3">push_int</a> (<a class="code" href="structpilha.html">t_pilha</a> *pilha, <span class="keywordtype">int</span> valor);</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keywordtype">int</span> <a class="code" href="pilha_8h.html#a9a1056d41fac1b54065bc87f00fc8bd5">push_char</a> (<a class="code" href="structpilha.html">t_pilha</a> *pilha, <span class="keywordtype">char</span> *pvalor);</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">int</span> <a class="code" href="pilha_8h.html#aca1b5caedd0d627603bca9743f529f7a">pop</a> (<a class="code" href="structpilha.html">t_pilha</a> *pilha, <a class="code" href="structelement_pilha.html">t_elementPilha</a> *el);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">int</span> <a class="code" href="pilha_8h.html#a343eb34378df4d840071105f276170ce">empty</a> (<a class="code" href="structpilha.html">t_pilha</a> *pilha);</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keywordtype">void</span> <a class="code" href="pilha_8h.html#aad0f587f5632f9c07f7e9f080e278b23">free_pilha</a> (<a class="code" href="structpilha.html">t_pilha</a> *pilha);</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keywordtype">void</span> <a class="code" href="pilha_8h.html#a36172fef8abd2f8ca43246b08ff5a927">print_elem</a> (<a class="code" href="structelement_pilha.html">t_elementPilha</a> *se);</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keywordtype">int</span> <a class="code" href="pilha_8h.html#ad793875cb373738aedaa0a321a935d7e">print_stack</a> (<a class="code" href="structpilha.html">t_pilha</a> *ps);</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __PILHA_H__ */</span><span class="preprocessor"></span></div><div class="ttc" id="pilha_8h_html_a36172fef8abd2f8ca43246b08ff5a927"><div class="ttname"><a href="pilha_8h.html#a36172fef8abd2f8ca43246b08ff5a927">print_elem</a></div><div class="ttdeci">void print_elem(t_elementPilha *se)</div><div class="ttdef"><b>Definition:</b> pilha.c:33</div></div>
+<div class="ttc" id="pilha_8h_html_a9a1056d41fac1b54065bc87f00fc8bd5"><div class="ttname"><a href="pilha_8h.html#a9a1056d41fac1b54065bc87f00fc8bd5">push_char</a></div><div class="ttdeci">int push_char(t_pilha *pilha, char *pvalor)</div><div class="ttdef"><b>Definition:</b> pilha.c:109</div></div>
+<div class="ttc" id="pilha_8h_html_aad0f587f5632f9c07f7e9f080e278b23"><div class="ttname"><a href="pilha_8h.html#aad0f587f5632f9c07f7e9f080e278b23">free_pilha</a></div><div class="ttdeci">void free_pilha(t_pilha *pilha)</div><div class="ttdef"><b>Definition:</b> pilha.c:49</div></div>
+<div class="ttc" id="pilha_8h_html_ab81264872354d455ca6b171f241a880e"><div class="ttname"><a href="pilha_8h.html#ab81264872354d455ca6b171f241a880e">get_pilha</a></div><div class="ttdeci">t_pilha * get_pilha()</div><div class="ttdef"><b>Definition:</b> pilha.c:53</div></div>
+<div class="ttc" id="pilha_8h_html_a31cd73f7dcaabf29492c8667305555a3"><div class="ttname"><a href="pilha_8h.html#a31cd73f7dcaabf29492c8667305555a3">t_pilha</a></div><div class="ttdeci">struct pilha t_pilha</div><div class="ttdoc">Composição da struct pilha Genérica. </div></div>
+<div class="ttc" id="pilha_8h_html_ad793875cb373738aedaa0a321a935d7e"><div class="ttname"><a href="pilha_8h.html#ad793875cb373738aedaa0a321a935d7e">print_stack</a></div><div class="ttdeci">int print_stack(t_pilha *ps)</div><div class="ttdef"><b>Definition:</b> pilha.c:5</div></div>
+<div class="ttc" id="structpilha_html"><div class="ttname"><a href="structpilha.html">pilha</a></div><div class="ttdoc">Composição da struct pilha Genérica. </div><div class="ttdef"><b>Definition:</b> pilha.h:41</div></div>
+<div class="ttc" id="structelement_pilha_html"><div class="ttname"><a href="structelement_pilha.html">elementPilha</a></div><div class="ttdoc">Elementos que constituem a pilha genérica. </div><div class="ttdef"><b>Definition:</b> pilha.h:26</div></div>
+<div class="ttc" id="pilha_8h_html_a64c569d39e94d418eabe8c360d6887e9"><div class="ttname"><a href="pilha_8h.html#a64c569d39e94d418eabe8c360d6887e9">top</a></div><div class="ttdeci">int top(t_pilha *pilha)</div><div class="ttdef"><b>Definition:</b> pilha.c:61</div></div>
+<div class="ttc" id="pilha_8h_html_a61313ac15d78805dad3fa62f9f0ccd80"><div class="ttname"><a href="pilha_8h.html#a61313ac15d78805dad3fa62f9f0ccd80">t_elementPilha</a></div><div class="ttdeci">struct elementPilha t_elementPilha</div><div class="ttdoc">Elementos que constituem a pilha genérica. </div></div>
+<div class="ttc" id="pilha_8h_html_a4f1cf3966a73983fb7a84973c11adbb3"><div class="ttname"><a href="pilha_8h.html#a4f1cf3966a73983fb7a84973c11adbb3">push_int</a></div><div class="ttdeci">int push_int(t_pilha *pilha, int valor)</div><div class="ttdef"><b>Definition:</b> pilha.c:99</div></div>
+<div class="ttc" id="pilha_8h_html_aca1b5caedd0d627603bca9743f529f7a"><div class="ttname"><a href="pilha_8h.html#aca1b5caedd0d627603bca9743f529f7a">pop</a></div><div class="ttdeci">int pop(t_pilha *pilha, t_elementPilha *el)</div><div class="ttdef"><b>Definition:</b> pilha.c:119</div></div>
+<div class="ttc" id="pilha_8h_html_a52e78495371f52e52c13d50cb1dbba6c"><div class="ttname"><a href="pilha_8h.html#a52e78495371f52e52c13d50cb1dbba6c">push_float</a></div><div class="ttdeci">int push_float(t_pilha *pilha, float valor)</div><div class="ttdef"><b>Definition:</b> pilha.c:89</div></div>
+<div class="ttc" id="pilha_8h_html_a343eb34378df4d840071105f276170ce"><div class="ttname"><a href="pilha_8h.html#a343eb34378df4d840071105f276170ce">empty</a></div><div class="ttdeci">int empty(t_pilha *pilha)</div><div class="ttdef"><b>Definition:</b> pilha.c:131</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

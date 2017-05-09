@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho 1: Código-Fonte de /Users/rafaeltheodoro/Documents/Rodrigo/UnBCIC-ED/resolucoes/trabalho1/include/calculadora.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Trabalho 1
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">calculadora.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="calculadora_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef __CALCULADORA_H__</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define __CALCULADORA_H__</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../include/pilha.h&quot;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span> <a class="code" href="calculadora_8h.html#a2405623ab7b93f8976482500a701c487">apply_operacao</a> (<a class="code" href="structpilha.html">t_pilha</a> *stk, <span class="keywordtype">char</span> c);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> <a class="code" href="calculadora_8h.html#a46c569c6cde95742159849bc4a73548a">apply_copia_el</a> (<a class="code" href="structpilha.html">t_pilha</a> *stk);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> <a class="code" href="calculadora_8h.html#a48afbe4db02a32fd7d604a2e7d44d6f0">apply_repeticao</a> (<a class="code" href="structpilha.html">t_pilha</a> *stk, <span class="keywordtype">char</span> c);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">int</span> <a class="code" href="calculadora_8h.html#a8855160c7da41c03f26c36c44d8b4bbb">apply_operador</a> (<span class="keywordtype">float</span> fopnd1, <span class="keywordtype">float</span> fopnd2, <span class="keywordtype">char</span> c);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="calculadora_8h_html_a48afbe4db02a32fd7d604a2e7d44d6f0"><div class="ttname"><a href="calculadora_8h.html#a48afbe4db02a32fd7d604a2e7d44d6f0">apply_repeticao</a></div><div class="ttdeci">void apply_repeticao(t_pilha *stk, char c)</div><div class="ttdef"><b>Definition:</b> calculadora.c:57</div></div>
+<div class="ttc" id="calculadora_8h_html_a46c569c6cde95742159849bc4a73548a"><div class="ttname"><a href="calculadora_8h.html#a46c569c6cde95742159849bc4a73548a">apply_copia_el</a></div><div class="ttdeci">void apply_copia_el(t_pilha *stk)</div><div class="ttdef"><b>Definition:</b> calculadora.c:42</div></div>
+<div class="ttc" id="structpilha_html"><div class="ttname"><a href="structpilha.html">pilha</a></div><div class="ttdoc">Composição da struct pilha Genérica. </div><div class="ttdef"><b>Definition:</b> pilha.h:41</div></div>
+<div class="ttc" id="calculadora_8h_html_a2405623ab7b93f8976482500a701c487"><div class="ttname"><a href="calculadora_8h.html#a2405623ab7b93f8976482500a701c487">apply_operacao</a></div><div class="ttdeci">void apply_operacao(t_pilha *stk, char c)</div><div class="ttdef"><b>Definition:</b> calculadora.c:7</div></div>
+<div class="ttc" id="calculadora_8h_html_a8855160c7da41c03f26c36c44d8b4bbb"><div class="ttname"><a href="calculadora_8h.html#a8855160c7da41c03f26c36c44d8b4bbb">apply_operador</a></div><div class="ttdeci">int apply_operador(float fopnd1, float fopnd2, char c)</div><div class="ttdef"><b>Definition:</b> calculadora.c:27</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
