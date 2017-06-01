@@ -4,6 +4,9 @@
 #include <string.h>
 #include "arvore.h"
 
+void buscar_caract(char* caracteristica, Tree* raiz)
+
+
 void buscar_caract(char* caracteristica, Tree* raiz) {
   if (raiz != NULL){
     printf("%s\n", raiz->info->carac);
