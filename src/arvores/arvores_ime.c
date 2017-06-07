@@ -126,6 +126,31 @@ void em_largura(t_no* raiz){
 }//end em_largura
 
 
+//-------------------------------------------
+noh* busca_pai(noh* raiz, int dado){
+
+    if( raiz == NULL || raiz->conteudo == dado )
+        return NULL;
+
+    if(raiz->conteudo > dado){
+
+        if(raiz->esq != NULL && raiz->esq->conteudo == dado)
+            return raiz;
+
+        return busca_pai(raiz->esq, dado);
+
+    }else if(raiz->conteudo < dado){
+
+        if(raiz->dir != NULL && raiz->dir->conteudo == dado)
+            return raiz;
+
+        return busca_pai(raiz->dir, dado);
+    }
+
+}//end busca_pai()
+
+
+
 // Devolve a altura da árvore binária
 // cuja raiz é r.
 
