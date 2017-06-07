@@ -23,6 +23,8 @@ void free_lista(Lista* cabeca);
 
 void imprime (Lista* lista);
 
+void remove_lista (Lista* cabeca, int posicao);
+
 Lista* cria_lista(){
   Lista* ptr_lista = (Lista*)malloc(sizeof(Lista));
   ptr_lista->cabeca = NULL;
@@ -86,6 +88,43 @@ void imprime (Lista* cabeca){
   printf("NULL\n");
 }
 
+void remove_lista (Lista* cabeca, int posicao) {
+  Nodo *ptr;
+  ptr = cabeca->cabeca;
+  int i=0;
+  while (ptr != NULL && i != posicao) {
+    i++;
+    ptr = ptr->proximo;
+  }
+  if (ptr == NULL) {
+    printf ("Posicao que deseja remover inexistente.");
+  }
+  else if (i == posicao) {
+    free (ptr);
+  }
+}
+
+void free_lista (Lista* cabeca) {
+  Nodo *ptr;
+  Nodo *ptr_primeiro;
+  ptr = cabeca->cabeca;
+  int i=0;
+  if (!vazia_lista(cabeca)) {
+
+    while (ptr != NULL) {
+      ptr_primeiro = ptr->proximo;
+
+      remove_lista (cabeca, i);
+
+      i ++;
+      ptr = ptr_primeiro;
+    }
+
+    free (cabeca);
+
+  }
+}
+
 int main(void){
   Lista* lista;
   printf("aqui");
@@ -99,6 +138,7 @@ int main(void){
   insere_lista (lista, 4, 9);
   insere_lista (lista, 15, 13);
   imprime (lista);
+  free_lista (lista);
   printf("\n===================\n");
 
 
